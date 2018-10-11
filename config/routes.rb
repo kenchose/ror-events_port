@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
 resources :users
+resources :events, only: [:index]
 resources :joins, only: [:create, :destroy]
 resources :sessions, only: [:new, :create, :destroy]
 

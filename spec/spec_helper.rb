@@ -20,7 +20,7 @@
 #   click_button 'Log In'
 # end
 def log_in email: "kenny@pham.com", password: "password"
-  visit '/sessions/new' unless current_path == "/sessions/new"
+  visit '/users/new' unless current_path == "/users/new"
   fill_in 'email', with: email
   fill_in 'password', with: password
   click_button 'Log In'

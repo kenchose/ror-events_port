@@ -3,7 +3,8 @@ FactoryBot.define do
     first_name { "Kenny" }
     last_name { "Pham" }
     email { "kenny@pham.com" }
-    location { "Alhambra, CA" }
+    city { "Fullerton" }
+    state { 'California' }
     password { "password" }
     password_confirmation { "password" }
   end

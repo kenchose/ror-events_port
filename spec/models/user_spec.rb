@@ -31,8 +31,11 @@ RSpec.describe User, type: :model do
       create(:user)
       expect(build(:user)).to be_invalid
     end
-    it 'location is blank' do
-      expect(build(:user, location: '')).to be_invalid
+    it 'city is blank' do
+      expect(build(:user, city: '')).to be_invalid
+    end
+    it 'state is blank' do
+      expect(build(:user, state: '')).to be_invalid
     end
     it 'password is blank' do
       expect(build(:user, password: '')).to be_invalid

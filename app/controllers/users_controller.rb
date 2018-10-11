@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new( user_params )
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to events_path
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
@@ -21,10 +21,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update( user_params )
+      redirect_to edit_user_path
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to edit_user_path
+    end  
   end
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :location, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :city, :state, :password, :password_confirmation)
     end
 end
