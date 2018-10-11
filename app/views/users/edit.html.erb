@@ -1,4 +1,5 @@
-<h1>Users#edit</h1>
+<h1>Users Edit</h1>
+<%= current_user.first_name %>
 <form action="/users/<%= @user.id %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="patch">
@@ -73,4 +74,10 @@
         </select>
     </p>
         <input type="submit" value="Update Records">
+</form>
+
+<form action="/users/<%=@user.id%>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Account">
 </form>

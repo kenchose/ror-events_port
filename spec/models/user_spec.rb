@@ -44,4 +44,20 @@ RSpec.describe User, type: :model do
       expect(build(:user, password_confirmation: 'notpassword')).to be_invalid
     end
   end
+  context 'relationships' do
+    before do
+      @user = create(:user)
+      @event = create(:event, name: 'name 1', date: '2000-01-01', location: 'location 1', user: @user)
+      @join = create(:join, event: @event, user: @user)
+    end
+    it 'has secrets' do
+      expect(@user.events).to include(@event)
+    end
+    it 'has joins' do
+      expect(@user.joins).to include(@join)
+    end
+    it "has events through joins table" do 
+      expect(@user.events_joined).to include(@event)
+    end
+  end
 end
