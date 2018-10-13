@@ -14,6 +14,12 @@
   <% end %>
 <% end %>
 
+<% if flash[:notice] %>
+  <% flash[:notice].each do |n| %>
+    <p><%= n %></p>
+  <% end %>
+<% end %>
+
 <% if current_user %>
   <form action="/sessions/<%=current_user.id%>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'events/index'
-
 resources :users
-resources :events, only: [:index]
-resources :joins, only: [:create, :destroy]
+resources :events, only: [:index, :create, :destroy]
+resources :joins, only: [:destroy]
+post 'joins/:id' => 'joins#create'
 resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

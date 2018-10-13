@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @events = Event.all
   end
 
   def edit
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     reset_session
-    User.find(params[:id]).delete
+    User.find(params[:id]).destroy
     redirect_to new_user_path
   end
 
