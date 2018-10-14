@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def index
     @events = Event.all
     @users = User.all
@@ -15,6 +16,12 @@ class EventsController < ApplicationController
       flash[:errors] = @event.errors.full_messages
       redirect_to events_path
     end
+  end
+
+  def show
+    @event = Event.find(params[:id])
+    @users = User.all
+    @messages = Message.all
   end
 
   def destroy

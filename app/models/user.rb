@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
   has_many :joins, dependent: :destroy
   has_many :joining_event, through: :joins, source: :event
+  has_many :messages, through: :events
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :first_name, :last_name, :email, :city, :state, presence: true
   validates :email, uniqueness: true, format: { with: VALID_EMAIL_REGEX }

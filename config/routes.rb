@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+resources :messages, only: [:destroy]
+post 'messages/:id' => 'messages#create'
 resources :users
-resources :events, only: [:index, :create, :destroy]
+resources :events, only: [:index, :create, :destroy, :show]
 resources :joins, only: [:destroy]
 post 'joins/:id' => 'joins#create'
 resources :sessions, only: [:new, :create, :destroy]

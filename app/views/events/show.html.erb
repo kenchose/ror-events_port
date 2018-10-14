@@ -1,0 +1,43 @@
+<a href="/events">Event Dashboard</a>
+<h2>Host:</h2> <%=@event.user.first_name%> <%=@event.user.last_name%>
+<h2>Date:</h2> <%=@event.date%>
+<h2>Location:</h2> <%=@event.city%>, <%=@event.state%>
+<h2>People that are coming to the event: <%=@event.joins.count%></h2> 
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>State</th>
+    </tr>    
+    <% @users.each do |u| %>
+        <tr>
+            <% if u.joining_event.ids.include? (@event.id) %>
+                <td><%=u.first_name%> <%=u.last_name%></td>
+                <td><%=u.city%></td>
+                <td><%=u.state%></td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
+<br>
+<h2>Discussion about the event:</h2>
+<div style="border:solid blacks" >
+    <% @messages.each do |m| %>
+    <ul><%= m.user.first_name %> says: <%= m.content %></ul>
+    --------------------
+    <% end %>
+    <br>
+    <form action="/messages/<%= @event.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="message[event_id]" value="<%=@event.id%>">
+        <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
+        <textarea name="message[content]" cols="30" rows="10"></textarea>
+        <br>
+        <label for="comment">Add Comment:</label>
+        <input type="submit" value="Submit Comment">
+    </form>
+</div>
+    
+    
+    

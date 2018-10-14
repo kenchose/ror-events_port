@@ -8,13 +8,15 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  
   private
-  def require_login
-    redirect_to new_session_path unless session[:user_id]
-  end
 
-  def require_correct_user
-    user = User.find(params[:id])
-    redirect_to current_user if current_user != user
-  end
+    def require_login
+      redirect_to new_session_path unless session[:user_id]
+    end
+
+    def require_correct_user
+      user = User.find(params[:id])
+      redirect_to current_user if current_user != user
+    end
 end

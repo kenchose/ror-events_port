@@ -3,5 +3,6 @@ class Event < ActiveRecord::Base
   # has_many :joins
   has_many :joins, dependent: :destroy
   has_many :users, through: :joins
+  has_many :messages, through: :users
   validates :name, :date, :city, :state, :detail, :user_id, presence: true
 end
