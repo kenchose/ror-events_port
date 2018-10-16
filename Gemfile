@@ -25,12 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bootstrap-sass', '~> 3.2.0'
 # gem 'autoprefixer-rails'
 # gem 'bootstrap'
-# gem 'bootstrap', '~> 4.1.3'
-# gem 'bootstrap', '~> 4.1', '>= 4.1.3'
+gem 'bootstrap', '~> 4.1.3'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# gem 'boostrap-sass'
-
+gem 'mini_racer'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

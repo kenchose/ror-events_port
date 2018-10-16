@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @users = User.all
     @joins = Join.all
+    @user = session[:user_id]
   end
 
   def create
@@ -16,6 +17,21 @@ class EventsController < ApplicationController
       flash[:errors] = @event.errors.full_messages
       redirect_to events_path
     end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+    @user = current_user
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update( event_params )
+      redirect_to events_path
+    else
+      flash[:errors] = @event.errors.full_messages
+      redirect_to edit_event_path
+    end  
   end
 
   def show

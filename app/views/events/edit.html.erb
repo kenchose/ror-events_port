@@ -1,25 +1,28 @@
-<a href="/events" style="float:right">Event Dashboard</a>
-<h1>Edit Your Profile</h1>
-<form action="/users/<%= @user.id %>" method="post">
+<a href="/events">Event Dashboard</a>
+<h1>Edit Event</h1>
+
+    <form action="/events/<%= @event.id %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="event[user_id]" value="<%= current_user.id %>">
     <p>
-        <label for="first_name">First Name:</label>
-        <input type="text" name="user[first_name]" value="<%=@user.first_name%>">
+        <label for="name">Name:</label>
+        <input type="text" name="event[name]" value="<%=@event.name%>">
     </p>
     <p>
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="user[last_name]" value="<%=@user.last_name%>">
+        <label for="date">Date:</label>
+        <input type="datetime-local" name="event[date]" value="<%=@event.date%>">
     </p>
     <p>
-        <label for="email">Email:</label>
-        <input type="email" name="user[email]" value="<%=@user.email%>">
+        <label for="deatil">Details:</label>
+        <br>
+        <textarea name="event[detail]" cols="30" rows="10"><%= @event.detail%></textarea>
     </p>
     <p>
         <label for="location">Location:</label>
-        <input type="text" name="user[city]" value="<%=@user.city%>">
-        <select name="user[state]" id="state">
-            <option value="<%=@user.state%>" selected="selected"><%=@user.state%></option>
+        <input type="text" name="event[city]" value="<%=@event.city%>">
+        <select name="event[state]" value="">
+            <option value="<%=@event.state%>" selected="selected"><%=@event.state%></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -71,13 +74,9 @@
             <option value="WV">West Virginia</option>
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
-        </select>
+        </select>    
     </p>
-        <input type="submit" value="Update Records">
-</form>
-
-<form action="/users/<%=@user.id%>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Account">
-</form>
+    <input type="submit" value="Update Event">
+</form>    
+    
+    
