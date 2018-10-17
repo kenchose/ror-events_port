@@ -1,6 +1,6 @@
-<a href="/events">Event Dashboard</a>
+<h2><%=@event.name%></h2>
 <h2>Host:</h2> <%=@event.user.first_name%> <%=@event.user.last_name%>
-<h2>Date:</h2> <%=@event.date%>
+<h2>Date:</h2> <%=@event.date.strftime("%B %d, %Y")%>
 <h2>Location:</h2> <%=@event.city%>, <%=@event.state%>
 <h2>People that are coming to the event: <%=@event.joins.count%></h2> 
 
