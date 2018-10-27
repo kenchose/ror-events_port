@@ -1,24 +1,42 @@
-<h2><%=@event.name%></h2>
-<h2>Host:</h2> <%=@event.user.first_name%> <%=@event.user.last_name%>
-<h2>Date:</h2> <%=@event.date.strftime("%B %d, %Y")%>
-<h2>Location:</h2> <%=@event.city%>, <%=@event.state%>
-<h2>People that are coming to the event: <%=@event.joins.count%></h2> 
+<div class="container">
+    <div class="row">
+        <h1 class="col-8-med"><%=@event.name%></h1>
+    </div>
+    <div class="row">
+        <h2 class="col-8-med">Host: <%=@event.user.first_name%> <%=@event.user.last_name%></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-8-med">Date: <%=@event.date.strftime("%B %d, %Y")%></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-8-med">Location: <%=@event.city%>, <%=@event.state%></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-8-med">People that are coming to the event: <%=@event.joins.count%></h2>   
+    </div>
+</div>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>State</th>
-    </tr>    
-    <% @users.each do |u| %>
+
+
+<table class="table table-striped">
+    <thead>
         <tr>
-            <% if u.joining_event.ids.include? (@event.id) %>
-                <td><%=u.first_name%> <%=u.last_name%></td>
-                <td><%=u.city%></td>
-                <td><%=u.state%></td>
-            <% end %>
-        </tr>
-    <% end %>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">State</th>
+        </tr>   
+        <tbody>
+        <% @users.each do |u| %>
+            <tr scope="row">
+                <% if u.joining_event.ids.include? (@event.id) %>
+                    <td><%=u.first_name%> <%=u.last_name%></td>
+                    <td><%=u.city%></td>
+                    <td><%=u.state%></td>
+                <% end %>
+            </tr>
+        <% end %>
+        </tbody> 
+    </thead>
 </table>
 <br>
 <h2>Discussion about the event:</h2>
@@ -39,5 +57,9 @@
     </form>
 </div>
     
-    
-    
+
+<div class="ui container buttons">
+  <button class="ui button">Cancel</button>
+  <div class="or"></div>
+  <button class="ui positive button">Save</button>
+</div>    

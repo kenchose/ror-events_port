@@ -13,6 +13,9 @@ class MessagesController < ApplicationController
     end
   end
 
+  def terms
+  end
+
   def destroy
   end
 

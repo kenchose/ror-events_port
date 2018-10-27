@@ -1,14 +1,36 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+    text-align: center;
+}
 table {
     border-collapse: separate;
-    border-spacing: 1em;
 }
 
-body{
+.index-wrapper{
     background-image: url("event_index.jpeg")
 }
+
 th {
     text-align: center;
+}
+
+button {
+    border-radius: 10px;
+}
+
+.header {
+    width: 100%;
+    height: 30vh;
+    background: #f0f0f0;
+}
+
+#instate_events {
+    padding: 0 2em;
+}
+
+#outstate_events {
+    padding: 0 2em;
 }

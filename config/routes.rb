@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 resources :messages, only: [:destroy]
 post 'messages/:id' => 'messages#create'
 resources :users
+get 'messages/terms' => 'messages#terms'
 resources :events
 resources :joins, only: [:destroy]
 post 'joins/:id' => 'joins#create'

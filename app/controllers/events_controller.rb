@@ -4,7 +4,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @users = User.all
     @joins = Join.all
-    @user = session[:user_id]
   end
 
   def create

@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
+# gem 'pg', '~> 1.1', '>= 1.1.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,7 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bootstrap-sass', '~> 3.2.0'
 # gem 'autoprefixer-rails'
 # gem 'bootstrap'
-gem 'bootstrap', '~> 4.1.3'
+# gem 'bootstrap', '~> 4.1.3'
+gem 'semantic', '~> 1.6', '>= 1.6.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'mini_racer'

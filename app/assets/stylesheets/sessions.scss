@@ -2,3 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    background-color: #CDD3D5;
+}
+
+.column {
+    max-width: 450px;
+    margin-top: 10rem;
+}
+
+.ui{
+    .image {
+        display:inline-block;
+        max-width: 100%;
+    }
+    .button.animation {
+        background: transparent;
+    }
+    .button.animation:hover {
+        background: transparent;
+    }
+}
+
+h2 {
+    height: 100%;
+}

@@ -1,19 +1,104 @@
-<div class="container">
-    <h1>Login</h1>
-    <div class="row col-6">
-        <form action="/sessions" method="post">
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui fluid teal centered image header">
+            <img src="../../../assets/airplane.jpeg" class="ui image">
+            Login to your account
+        </h2>
+        <form action="/sessions" method="post" class="ui large form">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input class="form-control" type="email" name="email">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="email" name="email" placeholder="Email">   
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="ui lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="ui fluid large teal submit button"><button class="ui teal eight wide button" type="submit">Login</button></div>
+                <div class="ui error messages"></div>
+                <div class="ui button animation">
+                    <a href="/users/new">
+                        <div class="positive ui animated button">
+                            <div class="visible content">Not regeistered?</div>
+                            <div class="hidden content">Click here!</div>
+                        </div>
+                    </a>     
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input class="form-control" type="password" name="password">
-            </div>
-            <button class="btn btn-primary" type="submit">Log In</button> <button class="btn btn-primary"><a href="/users/new"></a>Register</button>
-        </form>  
+        </form>     
     </div>
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="ui container">
+        <h1>Login</h1>
+        <form action="/sessions" method="post" class="ui form">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div class="ui one column stackable center aligned grid">
+                <div class="one column six wide">
+                    <div class="column">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="Email">   
+                    </div>     
+                    <div class="column">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="fluid ui button">Log In</button> 
+                    </div>
+                </div>
+            </div>
+        </form> 
+    </div>
+    <div class="ui bottom attached button">
+        <a href="/users/new">
+            <div class="positive ui animated button">
+                <div class="visible content">Not regeistered?</div>
+                <div class="hidden content">Click here!</div>
+            </div>
+        </a>     
+    </div> -->
+
+<!-- <br><br>
+<form action="/sessions" method="post" class="ui form">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="ui one column stackable center aligned page grid container">
+        <div class="column eight wide">
+            <div class="column">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Email">   
+            </div>     
+            <div class="column">
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="column">
+            <button type="submit">Log In</button> 
+        </div>
+    </div>
+</form>  
+<a href="/users/new">
+    <div class="positive ui animated button">
+        <div class="visible content">Not regeistered?</div>
+        <div class="hidden content">Click here!</div>
+    </div>
+</a> -->

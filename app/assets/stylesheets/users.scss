@@ -3,27 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
-
-body {
-    background-image: url("baseball.jpg");
+.welcome-wrapper {
+    position: relative;
+}
+@import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik');
+// font-family: 'Rubik', sans-serif;
+.welcome-wrapper {
+    background-image: url("hawaii.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("hawaii.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height:100vh;
 }
-
-.container {
-    margin-top: 10rem;
+.ui.container {
+    background: transparent;
+    // top: 50%;
+    // left: 10%;
 }
+
 h1 {
-    color:white;
+    text-align: right;
+    font-size: 3rem;
+    padding: 3rem 10rem;
+    
 }
 
-.form-group select {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
+.ui.fluid.dropdown {
+    height: 40px;
 }
+
+.ui.form {
+    .field>label {
+    color: white;
+    }
+    .checkbox label {
+        font-size: 1.1em;
+        color: white;
+    }
+    a {
+        font-size: bolder;
+        color: aqua;
+        font-size: 1.2em;
+    }
+}
+
+.ui.checkbox label {
+    font-family: 'Arimo', sans-serif;
+}
+
