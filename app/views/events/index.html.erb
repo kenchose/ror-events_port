@@ -1,13 +1,10 @@
-<h1>Welcome, <%=current_user.first_name%>!</h1>
-<div class="index-wrapper">
-    <section id="instate_events">
+<section id="instate_events">
+    <div class="instate-wrapper">
         <h2>Here are some of the events at your state:</h2>
-        <table class="ui celled table">
-            <thead class="ui center aligned header">
+        <table class="ui celled table raised segment">
+            <thead class="ui center aligned header raised segment">
                 <tr>
-                    <th>
-                        <div class="ui ribbon red label">Name</div>
-                    </th>
+                    <th class="ui red ribbon label">Name</th>
                     <th>Date</th>
                     <th>Details</th>
                     <th>Location</th>
@@ -36,13 +33,13 @@
                             </td>
                         <% elsif %>
                             <% if current_user == event.user %>
-                            <td><button class="btn btn-primary"><a href="events/<%= event.id %>/edit">Edit</a></button></td>
+                            <td><button class="ui primary button"><a class="edit-button" href="events/<%= event.id %>/edit">Edit</a></button></td>
                                 <td>
                                     <form action="/events/<%= event.id %>" method="post">
                                         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                                         <input type="hidden" name="_method" value="delete">
                                         <button type="submit">
-                                        <div class="positive ui animated button">
+                                        <div class="positive ui fluid animated button">
                                             <div class="visible content">Delete Event</div>
                                             <div class="hidden content">Are you sure?</div>
                                         </div>      
@@ -64,16 +61,16 @@
                 <% end %>
             <% end %>
         </table>
-    </section>
+    </div>
+</section>
 
-    <section id="outstate_events">
+<section id="outstate_events">
+    <div class="outstate-wrapper">
         <h2>Here are some of the events on other state:</h2>
-        <table class="ui celled table">
-            <thead class="ui header">
+        <table class="ui celled table raised segment">
+            <thead class="ui header raised segment">
                 <tr class="ui center aligned">
-                    <th>
-                        <div class="ui ribbon red label">Name</div>
-                    </th>
+                    <th class="ui ribbon red label">Name</th>
                     <th>Date</th>
                     <th>City</th>
                     <th>State</th>
@@ -100,13 +97,13 @@
                             </form>
                         <% elsif %>
                             <% if current_user == event.user %>
-                            <td><button class="btn btn-primary btn-block"><a href="events/<%= event.id %>/edit">Edit</a></button></td>
+                            <td><button class="ui primary button"><a class="edit-button" href="events/<%= event.id %>/edit">Edit</a></button></td>
                             <td>
                                 <form action="/events/<%= event.id %>" method="post">
                                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                                     <input type="hidden" name="_method" value="delete">
                                     <button type="submit">
-                                        <div class="positive ui animated button">
+                                        <div class="positive ui fluid animated button">
                                             <div class="visible content">Delete Event</div>
                                             <div class="hidden content">Are you sure?</div>
                                         </div>      
@@ -119,7 +116,7 @@
                         <td>
                             <form action="/joins/<%= event.id %>" method="post">
                                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                                <button class="ui toggle button">Join</button>
+                                <button class="ui toggle button modal-show">Join</button>
                             </form>
                         </td>
                         <% end %>
@@ -128,11 +125,12 @@
             <% end %>
             </tbody>
         </table>
-    </section>
+    </div>
+</section>
 
     <section id="add_event">
         <div class="ui container">
-            <form action="/events" method="post">
+            <form action="/events" method="post" class="ui form">
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                 <input type="hidden" name="event[user_id]" value="<%= current_user.id %>">
                 <div class="form-group">
@@ -247,7 +245,7 @@
                             </td>
                         <% elsif %>
                             <% if current_user == event.user %>
-                            <td><button class="btn btn-primary"><a href="events/<%= event.id %>/edit">Edit</a></button></td>
+                            <td><button class="ui primary button"><a href="events/<%= event.id %>/edit">Edit</a></button></td>
                                 <td>
                                     <form action="/events/<%= event.id %>" method="post">
                                         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

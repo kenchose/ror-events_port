@@ -18,9 +18,13 @@ body {
     }
     .button.animation {
         background: transparent;
+        margin-top: 10px;
     }
     .button.animation:hover {
         background: transparent;
+    }
+    .field {
+        padding: 10px 0;
     }
 }
 

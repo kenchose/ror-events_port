@@ -17,12 +17,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height:100vh;
 }
 .ui.container {
     background: transparent;
     // top: 50%;
     // left: 10%;
+    .edit {
+        text-align: center;
+    }
 }
 
 h1 {

@@ -12,7 +12,7 @@
                     <label for="last_name">Last Name:</label>
                     <input type="text" name="user[last_name]" placeholder="Last Name">
                 </div>
-                <div class="required field">
+<!--CREATE CONFIRMATION EMAIL-->                <div class="required field">
                     <label for="email">Email:</label>
                     <input type="email" name="user[email]" placeholder="Email">    
                 </div>
@@ -100,16 +100,16 @@
                 <button type="submit" class="ui disabled blue button large" id="signup">Sign Up</button>
             </div>
         </form>
-        <% if flash[:errors] %>
-            <div class="ui error message">
-                <h2>Registration Errors</h2>
-                <% flash[:errors].each do |n| %>
-                    <li><%= n %></li>
-                <% end %>
-            </div>
-        <% end %>
     </div>
 </div>
+<% if flash[:errors] %>
+    <div class="ui error message">
+        <h2>Registration Errors</h2>
+        <% flash[:errors].each do |n| %>
+            <li><%= n %></li>
+        <% end %>
+    </div>
+<% end %>
 
 
 <!--BOOTSTRAP-->

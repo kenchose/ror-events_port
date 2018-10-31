@@ -53,9 +53,19 @@
             // }
 @import url('https://fonts.googleapis.com/css?family=Arimo:700|Rubik');
 //  HEADER
-.ui.menu {
+.ui.inverted.segment {
     margin: 0;
     border-radius: 0;
+    .item:hover {
+        text-decoration: underline;
+        text-decoration-color: red;
+    }
+    .pointing.menu {
+        padding:0;
+    }
+    a {
+        font-size: large;
+    }
 }
 // END-HEADER
 

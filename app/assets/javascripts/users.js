@@ -13,5 +13,9 @@ $(document).ready(function(){
             $("#signup").attr("disabled", "disabled");
         }
     });
+
+        $('.modal-show').click(function(){
+        ('.mini.modal').modal('show');
+    })
 });
 

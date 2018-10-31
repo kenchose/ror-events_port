@@ -19,7 +19,7 @@
                         <input type="password" name="password" placeholder="Password">
                     </div>
                 </div>
-                <div class="ui fluid large teal submit button"><button class="ui teal eight wide button" type="submit">Login</button></div>
+                <button class="ui fluid teal eight button" type="submit">Login</button>
                 <div class="ui error messages"></div>
                 <div class="ui button animation">
                     <a href="/users/new">
@@ -31,6 +31,13 @@
                 </div>
             </div>
         </form>     
+        <% if flash[:errors] %>
+            <div class="ui error message ">
+                <% flash[:errors].each do |n| %>
+                    <ol><%= n %></ol>
+                <% end %>
+            </div>
+        <% end %>
     </div>
 </div>
 

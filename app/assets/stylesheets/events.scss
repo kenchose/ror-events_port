@@ -9,9 +9,6 @@ table {
     border-collapse: separate;
 }
 
-.index-wrapper{
-    background-image: url("event_index.jpeg")
-}
 
 th {
     text-align: center;
@@ -27,10 +24,37 @@ button {
     background: #f0f0f0;
 }
 
-#instate_events {
+.instate-wrapper {
+    margin: 3em;
     padding: 0 2em;
 }
 
-#outstate_events {
-    padding: 0 2em;
+// #instate_events {
+//     padding:
+// }
+
+.outstate-wrapper {
+    margin: 3em;
+    padding: 0 2em
+}
+
+
+.edit-button {
+    color: white;
+}
+.edit-button:hover {
+    text-decoration: none;
+    color: white;
+}
+
+// .ui {
+//     .item:hover {
+//         text-decoration: underline;
+//         border-bottom-color: red;
+//     }
+// }
+
+.ui.violet.button {
+    width: 110px;
+    height: 50px;
 }

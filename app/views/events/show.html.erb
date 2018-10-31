@@ -1,3 +1,6 @@
+card
+
+
 <div class="container">
     <div class="row">
         <h1 class="col-8-med"><%=@event.name%></h1>
@@ -16,6 +19,8 @@
     </div>
 </div>
 
+
+card 
 
 
 <table class="table table-striped">
@@ -43,7 +48,7 @@
 <div style="border:solid blacks" >
     <% @messages.each do |m| %>
     <ul><%= m.user.first_name %> says: <%= m.content %></ul>
-    --------------------
+    <hr>
     <% end %>
     <br>
     <form action="/messages/<%= @event.id %>" method="post">
