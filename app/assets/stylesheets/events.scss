@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#add_event {
+    margin-bottom: 3rem;
+}
 h1 {
     text-align: center;
 }
 table {
     border-collapse: separate;
 }
-
 
 th {
     text-align: center;
@@ -29,10 +31,6 @@ button {
     padding: 0 2em;
 }
 
-// #instate_events {
-//     padding:
-// }
-
 .outstate-wrapper {
     margin: 3em;
     padding: 0 2em
@@ -46,7 +44,6 @@ button {
     text-decoration: none;
     color: white;
 }
-
 // .ui {
 //     .item:hover {
 //         text-decoration: underline;
@@ -56,5 +53,30 @@ button {
 
 .ui.violet.button {
     width: 110px;
-    height: 50px;
+    height: 45px;
+    margin: auto 0;
+    font-size: 1rem;
+    padding: 0;
 }
+.ui.fluid.dropdown {
+    height: 36px;
+    margin-top: 23px;
+}
+.ui.mini.modal.header {
+    padding: 0;
+    margin: 0;
+}
+.ui.modal {
+    .header {
+        height:8vh;
+    }
+}
+
+#left-name {
+    float:left;
+}
+// thead {
+//     @media screen {
+        
+//     }
+// }

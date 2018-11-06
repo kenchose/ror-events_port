@@ -14,8 +14,13 @@ $(document).ready(function(){
         }
     });
 
-        $('.modal-show').click(function(){
-        ('.mini.modal').modal('show');
+    $('#delete-event').on('click', function(){
+        $('.small.test.modal').modal("show");
     })
+    
+    $('.red.cance.button').on('click', function(){
+        $('.small.test.modal').modal("hide");
+    });
+
 });
 

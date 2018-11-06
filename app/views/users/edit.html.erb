@@ -89,26 +89,26 @@
     <input type="hidden" name="_method" value="patch">
     <!-- <div class="four wide fields"> -->
         <h2>Full Name</h2>
-        <div class="inline field">
+        <div class="inline required field">
             <label for="first_name">First Name</label>
             <input type="text" name="user[first_name]" value="<%= @user.first_name %>">
         </div>
-        <div class="inline field">
+        <div class="inline required field">
             <label for="last_name">Last Name</label>
             <input type="text" name="user[last_name]" value="<%= @user.last_name %>">
         </div>
-<!--CREATE CONFIRMATION EMAIL-->        <div class="inline field">
+<!--CREATE CONFIRMATION EMAIL-->        <div class="inline required field">
             <label for="email">Email</label>
             <input type="email" name="user[email]" value="<%= @user.email %>">    
         </div>
     <!-- </div> -->
     <h2>Location</h2>
-    <div class="two inline fields">
-        <div class="field four wide field">
+    <div class="two required fields">
+        <div class="four wide field">
             <label for="location">City</label>
             <input type="text" name="user[city]" value="<%= @user.city %>">            
         </div>
-        <div class="field two wide field">
+        <div class="two wide field">
             <label>State</label>
             <select class="ui fluid dropdown" name="user[state]"  id="state">
                 <option value="<%= @user.state %>"><%= @user.state %></option>
@@ -167,7 +167,7 @@
         </div>
     </div>
     <button type="submit" class="ui primary button">Update Records</button>
-    <a href="/users/<%=@user.id%>" data-method="delete"><button class="ui red button" id="delete-account">Delete Account</button></a>
+    <a href="/users/<%=@user.id%>" data-method="delete"><button class="ui red button">Delete Account</button></a>
 </form>
 
 <% if flash[:errors] %>
