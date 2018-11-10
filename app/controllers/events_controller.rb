@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @users = User.all
     @joins = Join.all
+    @today = Date.today
   end
 
   def create
@@ -37,6 +38,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @users = User.all
     @messages = Message.all
+    @message = Message.where(event_id:@event.id)
   end
 
   def destroy

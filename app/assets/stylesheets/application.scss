@@ -51,7 +51,9 @@
             //     color: 	#17a2b8;
             //     cursor: pointer;
             // }
-@import url('https://fonts.googleapis.com/css?family=Arimo:700|Rubik');
+@import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik|Karla|Space+Mono:700');
+// @import url('https://fonts.googleapis.com/css?family=Arimo:700|Rubik');
+
 //  HEADER
 .ui.inverted.segment {
     margin: 0;
@@ -74,5 +76,14 @@
 }
 
 body {
+    background-color: #E0E2DB;
+    height:100%;
+}
+
+h1, h2{
+    font-family: 'Karla', sans-serif;
+}
+
+* {
     font-family: 'Rubik', sans-serif;
 }

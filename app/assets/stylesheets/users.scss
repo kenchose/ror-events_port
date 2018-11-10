@@ -9,7 +9,7 @@
 .welcome-wrapper {
     position: relative;
 }
-@import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik');
+// @import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik');
 // font-family: 'Rubik', sans-serif;
 .welcome-wrapper {
     background-image: url("hawaii.jpg");
@@ -31,11 +31,12 @@ h1 {
     text-align: right;
     font-size: 3rem;
     padding: 3rem 10rem;
-    
+    // font-family: 'Karla', sans-serif;
 }
 
 .ui.fluid.dropdown {
-    height: 40px;
+    height: 42px;
+    margin:0;
 }
 
 .ui.form {
@@ -55,5 +56,21 @@ h1 {
 
 .ui.checkbox label {
     font-family: 'Arimo', sans-serif;
+}
+
+ui.red.cancel.button a{
+    font-size: 1rem;
+    font-weight: 100;
+}
+.ui.red.cancel.button a{
+    text-decoration: none;
+    color:white;
+}
+.ui.red.cancel.button a:hover{
+    text-decoration: none;
+    color:white;
+}
+.ui.container.edit {
+    margin-top:1em;
 }
 

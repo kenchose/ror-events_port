@@ -1,13 +1,30 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background-image: url("airplan.jpeg");
+    background: no-repeat;
+    background-size: cover;
 
-#add_event {
-    margin-bottom: 3rem;
 }
+
+img {
+    height:100px;
+    width:100px;
+    background-image: url("baseball.jpg");
+    background: no-repeat;
+    background-size: cover;
+
+}
+
+input, textarea, select{
+    opacity: 0.9;
+}
+
 h1 {
     text-align: center;
 }
+
 table {
     border-collapse: separate;
 }
@@ -20,6 +37,17 @@ button {
     border-radius: 10px;
 }
 
+#add_event {
+    padding-bottom: 3em;
+    // padding-right: 12em;
+    // background-color: white;
+}
+
+.ui.event.container {
+    width: 100%;
+}
+
+
 .header {
     width: 100%;
     height: 30vh;
@@ -27,8 +55,9 @@ button {
 }
 
 .instate-wrapper {
-    margin: 3em;
+    margin: 8em 3em;
     padding: 0 2em;
+    background-color:#E0E2DB
 }
 
 .outstate-wrapper {
@@ -75,6 +104,33 @@ button {
 #left-name {
     float:left;
 }
+
+.ui.form.add-event {
+    background-color: white;
+    padding: 5em;
+    padding-bottom: 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('wine.jpg');
+}
+
+.ui.horizontal.divider {
+    color:red;
+    margin: 3em 0
+}
+
+.msg-container {
+    .row {
+        margin-top: 5em;
+        .column {
+            margin:0 4.8em;
+        }
+    }
+
+}
+// .event-show {
+//     font-size: 1.28571429em;
+// }
 // thead {
 //     @media screen {
         

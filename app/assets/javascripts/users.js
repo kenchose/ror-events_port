@@ -14,13 +14,22 @@ $(document).ready(function(){
         }
     });
 
+    // $('.item').hover(function(){
+    //     $(this).addClass('.active');
+    // });
+
     $('#delete-event').on('click', function(){
         $('.small.test.modal').modal("show");
     })
     
-    $('.red.cance.button').on('click', function(){
+    $('.red.cancel.button').on('click', function(){
         $('.small.test.modal').modal("hide");
     });
+
+    $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+  })
+;
 
 });
 
