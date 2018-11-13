@@ -8,7 +8,6 @@ body {
 
 .column {
     max-width: 450px;
-    margin-top: 10rem;
 }
 
 .ui{
@@ -28,6 +27,13 @@ body {
     }
 }
 
+.ui.session-form {
+    height: 86%;
+}
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
 h2 {
     height: 100%;
 }

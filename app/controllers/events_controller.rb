@@ -1,16 +1,17 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.order("date ASC")
     @users = User.all
     @joins = Join.all
     @today = Date.today
+
   end
 
   def create
     @user = User.find(session[:user_id])
     @event = Event.new( event_params )
-    if @event.save
+    if @event.save 
       flash[:notice] = ["You have successfully created a new event."]
       redirect_to events_path
     else
@@ -27,6 +28,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update( event_params )
+      flash[:notice] = ["Event successfully updated"]
       redirect_to events_path
     else
       flash[:errors] = @event.errors.full_messages

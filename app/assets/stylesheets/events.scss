@@ -1,21 +1,21 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-    background-image: url("airplan.jpeg");
-    background: no-repeat;
-    background-size: cover;
+// body {
+//     background-image: url("airplan.jpeg");
+//     background: no-repeat;
+//     background-size: cover;
 
-}
+// }
 
-img {
-    height:100px;
-    width:100px;
-    background-image: url("baseball.jpg");
-    background: no-repeat;
-    background-size: cover;
+// img {
+//     height:100px;
+//     width:100px;
+//     background-image: url("baseball.jpg");
+//     background: no-repeat;
+//     background-size: cover;
 
-}
+// }
 
 input, textarea, select{
     opacity: 0.9;
@@ -37,11 +37,11 @@ button {
     border-radius: 10px;
 }
 
-#add_event {
-    padding-bottom: 3em;
+// #add_event {
+    // padding-bottom: 3em;
     // padding-right: 12em;
     // background-color: white;
-}
+// }
 
 .ui.event.container {
     width: 100%;
@@ -65,32 +65,24 @@ button {
     padding: 0 2em
 }
 
-
-.edit-button {
-    color: white;
-}
-.edit-button:hover {
-    text-decoration: none;
-    color: white;
-}
 // .ui {
-//     .item:hover {
-//         text-decoration: underline;
-//         border-bottom-color: red;
-//     }
-// }
-
-.ui.violet.button {
-    width: 110px;
-    height: 45px;
-    margin: auto 0;
-    font-size: 1rem;
-    padding: 0;
-}
-.ui.fluid.dropdown {
-    height: 36px;
-    margin-top: 23px;
-}
+    //     .item:hover {
+        //         text-decoration: underline;
+        //         border-bottom-color: red;
+        //     }
+        // }
+        
+        .ui.violet.button {
+            width: 110px;
+            height: 45px;
+            margin: auto 0;
+            font-size: 1rem;
+            padding: 0;
+        }
+        .ui.fluid.dropdown {
+            height: 36px;
+            margin-top: 23px;
+        }
 .ui.mini.modal.header {
     padding: 0;
     margin: 0;
@@ -104,14 +96,35 @@ button {
 #left-name {
     float:left;
 }
+.ui.edit-wrapper {
+    background-image: url('../assets/hike.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ui.container.edit-event {
+    padding-top:2em;
+}
+
+.edit-button {
+    color: white;
+}
+
+.edit-button:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.ui.form.edit-form {
+    padding-bottom: 3em;
+}
 
 .ui.form.add-event {
-    background-color: white;
-    padding: 5em;
-    padding-bottom: 2em;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('wine.jpg');
+    padding: 5em;
+    padding-bottom: 2em;
 }
 
 .ui.horizontal.divider {
@@ -126,8 +139,27 @@ button {
             margin:0 4.8em;
         }
     }
-
 }
+
+#card-header {
+    display: inline;
+    background-color: white;
+}
+
+.ui.inverted.vertical.footer {
+    padding: 1em;
+}
+
+.ui.contact-icon {
+    margin: 0 8px;
+}
+// .ui.card {
+//     .content {
+//         .header {
+//             display:inline;
+//         }
+//     }
+// }
 // .event-show {
 //     font-size: 1.28571429em;
 // }

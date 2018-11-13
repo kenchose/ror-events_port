@@ -56,10 +56,10 @@
       <% if current_user %>
       <div class="right menu">
         <div class="item">
-          <a href="/events"><i class="ui home icon"></i>Home</a>
+          <a href="/events"><i class="calendar alternate outline icon"></i>Event Dashboard</a>
         </div>
         <div class="item">
-          <a href="/users/<%= current_user.id %>/edit"><%= current_user.first_name %></a>
+          <a href="/users/<%= current_user.id %>/edit"><i class="user circle outline icon"></i><%= current_user.first_name %></a>
         </div>
         <div class="item">
           <form action="/sessions/<%=current_user.id%>" method="post">
@@ -81,19 +81,16 @@
     </div>
   </div>
 
-  <!-- <div class="error-container">
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |n| %>
-          <ul><p class="alert alert-danger" role="alert"><%= n %></p></ul>
-        <% end %>
-      <% end %>
-  </div> -->
-
-  <!--SEMANTIC-->
-  <!--SEMANTIC-->
   
+  <%= yield %>
+<section id="footer">
+  <div class="ui inverted vertical segment equal width center aligned padding grid">
+    <div class="row" id="footer-copyright">
+      <p><i class="copyright outline icon"></i>2018 Event Finder, Inc. <i class="ui" style="margin:0 1px"></i> All Rights Reserved.<a href="https://github.com/kenchose"><i class="ui github green icon contact-icon"></i></a><a href="https://www.linkedin.com/in/kenny-pham-2a5740101"><i class="ui linkedin icon contact-icon"></i></a><a href="https://plus.google.com/102171157736394833040"><i class="ui google plus red icon contact-icon"></i></a><a href="mailto:kennypm42@gmail.com"><i class="ui envelope outline icon contact-icon" style="color: white;"></i></p> 
+    </div>
+  </div>
+</section>
   <!-- <script src="../semantic/dist/semantic.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-<%= yield %>
 </body>
 </html>

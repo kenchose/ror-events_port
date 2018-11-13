@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, :city, :state, presence: true
   validates :email, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   before_save { |user| user.email = user.email.downcase }
-  validates :password, length: { minimum: 8}, on: create
+  validates :password, length: { minimum: 8}, on: :create
 end

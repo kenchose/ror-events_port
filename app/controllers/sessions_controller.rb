@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
   def destroy
     if current_user == User.find(params[:id])
       reset_session
+      flash[:notice] = ["You've been successfully logged out"]
       redirect_to new_user_path
     end
   end

@@ -18,7 +18,7 @@ $(document).ready(function(){
     //     $(this).addClass('.active');
     // });
 
-    $('#delete-event').on('click', function(){
+    $('.delete-event').on('click', function(){
         $('.small.test.modal').modal("show");
     })
     
@@ -28,8 +28,9 @@ $(document).ready(function(){
 
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
-  })
-;
+    });
+
+    // $('.test.modal').modal('attach events', '.test.button', 'show');
 
 });
 

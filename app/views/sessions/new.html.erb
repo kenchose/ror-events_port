@@ -1,4 +1,4 @@
-<div class="ui middle aligned center aligned grid">
+<div class="ui middle aligned center aligned grid session-form">
     <div class="column">
         <h2 class="ui fluid teal centered image header">
             <img src="../../../assets/lets-go-travel.jpg" class="ui image">
@@ -31,15 +31,15 @@
                 </div>
             </div>
         </form>     
-        <% if flash[:errors] %>
-            <div class="ui error message ">
-                <% flash[:errors].each do |n| %>
-                    <ol><%= n %></ol>
-                <% end %>
-            </div>
-        <% end %>
     </div>
 </div>
+<% if flash[:errors] %>
+    <div class="ui error message ">
+        <% flash[:errors].each do |n| %>
+            <ol><%= n %></ol>
+        <% end %>
+    </div>
+<% end %>
 
 
 
