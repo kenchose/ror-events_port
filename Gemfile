@@ -31,6 +31,7 @@ gem 'semantic', '~> 1.6', '>= 1.6.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'mini_racer'
+gem "loofah", ">= 2.2.3"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
