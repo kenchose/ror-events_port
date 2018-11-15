@@ -17,10 +17,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @events = Event.all
-    @user = User.find(params[:id])
-  end
 
   def edit
     @user = User.find(params[:id])
@@ -29,9 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update( user_params )
-    #   if self.(password: params[:password]) != self.(password_confirmation: params[:password_confirmation])
-    #   # if self.update(password: params[:password]) != @user.update(password_confirmation: params[:password_confirmation])
-    #     flash[:errors]=["Password and password confirmation do not match"]
+      flash[:notice]=["User was successfully updated"]
       redirect_to events_path
     else
       flash[:errors] = @user.errors.full_messages

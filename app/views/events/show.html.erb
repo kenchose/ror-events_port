@@ -1,146 +1,91 @@
-<div class="ui container show-container">
-    <div class="ui horizontal divider"><h2>People from around the nation that are coming!</h2></div>
-    <table class="ui fixed table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @users.each do | user |%>
-            <% if user.joining_event.ids.include?(@event.id) %>
-            <tr>
-                <td class="event-show"><%= user.first_name %><%= user.last_name %></td>
-                <td class="event-show"><%= user.city %>, <%= user.state %></td>
-            </tr>
+<div class="event-wrapper">
+    <% if flash[:errors] %>
+        <div class="ui negative message">
+            <h3>There are some errors with your submission</h3>
+            <i class="close icon"></i>
+            <% flash[:errors].each do |e| %>
+                <ul class="list">
+                    <p><%= e %></p>
+                </ul>
             <% end %>
-            <% end %>
-        </tbody>
-    </table>
-</div>
-
-
-<div class="ui grid container msg-container ">
-    <div class="row">
-        <div class="ten wide column">
-            <div class="ui card">
-                <div class="image">
-                    <img src="https://source.unsplash.com/random">
-                </div>
-                <div class="content">
-                    <div id="card-header" class="header"><%= @event.name %></div>
-                    <div class="meta"><%= @event.date.strftime("%B %d, %Y") %></div>
-                    <div class="meta"><%= @event.city %>, <%= @event.state %></div>
-                    <div class="description">
-                        <p><%= @event.detail %></p>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <i class="child icon"></i>
-                    <%= @event.joins.count %> attending
-                </div>
-            </div>
         </div>
-        <div class="six wide column">
-            <div class="ui comments">
-                <div class="comment">
-                    <div class="content">
-                        <h2 style="margin-bottom:1em; text-decoration: underline; font-weight: 900;">Message Board</h2>
-                        <% if @message.exists? %>
-                            <% @message.each do |m| %>
-                                <a href="/users/<%= m.user.id %>" class="author"><%= m.user.first_name %> <%= m.user.last_name%></a> 
-                                <div class="metadata">
-                                    <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
-                                </div>
-                                <div class="text">
-                                    <%= m.content %>
-                                </div>
-                                <br>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-                <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
-                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                    <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
-                    <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
-                    <div class="field">
-                        <textarea name="message[content]"></textarea>
-                    </div>
-                    <div class="ui blue labeled submit icon button">
-                        <i class="icon edit"></i><button class="ui primary button msg-button" type="submit">Add Comment</button>
-                    </div>
-                </form>
-            </div> 
-        </div>
-    </div>
-</div>
-
-<section id="footer">
-    <div class="ui inverted vertical segment equal width center aligned padding grid">
-        <div class="row">
-            <div class="column">
-                <p><i class="copyright outline icon"></i>Event Finder, 2018. <i class="ui" style="margin:0 1px"></i> All Rights Reserved<a href="https://github.com/kenchose"><i class="ui github green icon contact-icon"></i></a><a href="https://www.linkedin.com/in/kenny-pham-2a5740101"><i class="ui linkedin icon contact-icon"></i></a><a href="https://plus.google.com/102171157736394833040"><i class="ui google plus red icon contact-icon"></i></a></p> 
-            </div>
-        </div>
-    </div>
-</section>
+    <% end %>
     
-
-
-
-
-
-<!-- <div class="ui card">
-        <div class="content">
-            <div class="header"><%= @event.name %></div>
-            <div class="meta"><%= @event.date.strftime("%B %d, %Y") %></div>
-            <div class="meta"><%= @event.city %>, <%= @event.state %></div>
-            <div class="description">
-                <img src="/app/assets/images/camera.jpg" width="100px" height="100px">
-                <p><%= @event.detail %></p>
-            </div>
-        </div>
-        <div class="extra content">
-            <i class="child icon"></i>
-            <%= @event.joins.count %> attending
-        </div>
-    </div>
-
-
-<hr>
-
-<div class="ui container eight wide row">
-    <div class="ui comments">
-        <div class="comment">
-            <div class="content">
-                <% @messages.each do |m| %>
-                <a href="users/<%= m.user.id %>" class="author"><%= m.user.first_name %> <%= m.user.last_name%></a> 
-                <div class="metadata">
-                    <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
-                </div>
-                <div class="text">
-                    <%= m.content %>
-                </div>
-                <br>
+    <div class="ui container show-container">
+        <div class="ui horizontal divider"><h2>People from around the nation that are coming!</h2></div>
+        <table class="ui fixed table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @users.each do | user |%>
+                <% if user.joining_event.ids.include?(@event.id) %>
+                <tr>
+                    <td class="event-show"><%= user.first_name %><%= user.last_name %></td>
+                    <td class="event-show"><%= user.city %>, <%= user.state %></td>
+                </tr>
                 <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ui grid container msg-container ">
+        <div class="row">
+            <div class="ten wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="https://source.unsplash.com/random">
+                    </div>
+                    <div class="content">
+                        <div id="card-header" class="header"><%= @event.name %></div>
+                        <div class="meta"><%= @event.date.strftime("%B %d, %Y") %></div>
+                        <div class="meta"><%= @event.city %>, <%= @event.state %></div>
+                        <div class="description">
+                            <p><%= @event.detail %></p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <i class="child icon"></i>
+                        <%= @event.joins.count %> attending
+                    </div>
+                </div>
+            </div>
+            <div class="six wide column">
+                <div class="ui comments">
+                    <div class="comment">
+                        <div class="content">
+                            <h2 style="margin-bottom:1em; text-decoration: underline; font-weight: 900;">Message Board</h2>
+                            <% if @message.exists? %>
+                                <% @message.each do |m| %>
+                                    <a href="/users/<%= m.user.id %>" class="author"><%= m.user.first_name %> <%= m.user.last_name%></a> 
+                                    <div class="metadata">
+                                        <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
+                                    </div>
+                                    <div class="text">
+                                        <%= m.content %>
+                                    </div>
+                                    <br>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
+                        <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
+                        <div class="field">
+                            <textarea name="message[content]"></textarea>
+                        </div>
+                        <div class="ui blue labeled submit icon button" id="msg-submit">
+                            <i class="icon edit"></i><button class="ui primary button msg-button" type="submit">Add Comment</button>
+                        </div>
+                    </form>
+                </div> 
             </div>
         </div>
-        <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <div class="field">
-                <textarea></textarea>
-            </div>
-            <div class="ui primary submit labeled icon button">
-                <i class="icon edit"></i> Add Comment
-            </div>
-        </form>
     </div>
-</div> -->
-
-<!-- <div class="ui container buttons">
-  <button class="ui button">Cancel</button>
-  <div class="or"></div>
-  <button class="ui positive button">Save</button>
-</div>     -->
+</div>

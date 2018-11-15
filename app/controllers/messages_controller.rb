@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to event_path(@event.id)
     else
-      flash[:errors] = @message.errors.full_messages
+      flash[:errors] = ["Textarea was empty"]
       redirect_to event_path(@event.id)
     end
   end

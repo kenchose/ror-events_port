@@ -1,23 +1,21 @@
 <!--SHOW ERRORS AT THE POINT OF ERRORS WITH ERROR ICON-->
 <% if flash[:errors] %>
     <div class="ui negative message">
+        <h3>There are some errors with your submission</h3>
         <i class="close icon"></i>
-        <div class="header">
-            <h3>There are some errors with your submission</h3>
         <% flash[:errors].each do |e| %>
             <ul class="list">
                 <li><%= e %></li>
             </ul>
         <% end %>
-        </div>
     </div>
 <% end %>
 
 <% if flash[:notice] %>
     <div class="ui positive message">
+    <% flash[:notice].each do |e| %>
+        <p><i class="check icon"></i><%= e %></p>
         <i class="close icon"></i>
-        <% flash[:notice].each do |e| %>
-            <p><i class="check icon"></i><%= e %></p>
         <% end %>
     </div>
 <% end %>
@@ -29,7 +27,7 @@
         <form action="/users" method="post" class="ui large form error">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <div class="four wide field">
-                    <label for=""><span style="color:red;">*</span>All fields are requried unless specifide as optional</label>
+                    <label for=""><span style="color:red;">*</span>All fields are requried</label>
                 <div class="field">
                     <label for="first_name">First Name</label>
                     <input type="text" name="user[first_name]" placeholder="First Name">

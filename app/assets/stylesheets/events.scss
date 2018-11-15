@@ -65,6 +65,9 @@ button {
     padding: 0 2em
 }
 
+.event-wrapper {
+    margin-bottom: 3em;
+}
 // .ui {
     //     .item:hover {
         //         text-decoration: underline;
@@ -132,6 +135,13 @@ button {
     margin: 3em 0
 }
 
+#msg-submit:hover {
+    text-decoration: none;
+}
+.ui.icon-edit:hover {
+    text-decoration: none;
+}
+
 .msg-container {
     .row {
         margin-top: 5em;
@@ -153,6 +163,7 @@ button {
 .ui.contact-icon {
     margin: 0 8px;
 }
+
 // .ui.card {
 //     .content {
 //         .header {

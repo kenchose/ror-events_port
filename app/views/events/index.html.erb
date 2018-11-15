@@ -1,8 +1,8 @@
 <!-- CREATE MODAL ASKING IF YOU'RE SURE YOU WANT TO SIGN OUT-->
 <% if flash[:errors] %>
     <div class="ui negative message">
+    <h3>There are some errors with your submission</h3>
         <i class="close icon"></i>
-        <h3>There are some errors with your submission</h3>
         <% flash[:errors].each do |e| %>
             <ul class="list">
                 <li><%= e %></li>
@@ -63,13 +63,6 @@
                         <% elsif %>
                             <% if current_user == event.user %>
                             <td class="ui center aligned"><button class="ui primary button"><a class="edit-button" href="events/<%= event.id %>/edit">Edit</a></button>
-                                <!-- <td> -->
-<!--<button class="delete-event" data-target="<%= event.id %>">
-    <div class="ui positive fluid animated fade button">
-        <div class="visible content">Delete Event</div>
-        <div class="hidden content"><i class="trash icon"></i></div>
-    </div>      
-</button>-->
                                 <button class="ui center aligned">
                                     <form action="/events/<%= event.id %>" method="post" class="ui center aligned">
                                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -122,7 +115,7 @@
                         <td><%= event.date.strftime("%B %d, %Y") %></td>
                         <td><%= event.city %></td>
                         <td><%= event.state %></td>
-                        <td><a href="users/<%= event.user.id %>"><%= event.user.first_name %> <%= event.user.last_name %></a></td>
+                        <td><%= event.user.first_name %> <%= event.user.last_name %></td>
                         <% if current_user.joining_event.ids.include? (event.id) %>
                         <td class="ui center aligned">
                             <form action="/joins/<%= event.id %>" method="post">
