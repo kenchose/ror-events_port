@@ -1,6 +1,6 @@
 Events is a web application that you can see all events user's posted. Events is grouped by the state that your living in and events outside your state. Users can add new events and have the ability to join other users.
 
 Technology:
-- Ruby and Rails
+- Ruby on Rails
 - SQLite
 - Bootstrap
