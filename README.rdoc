@@ -3,4 +3,4 @@ Events is a web application that you can see all events user's posted. Events is
 Technology:
 - Ruby on Rails
 - SQLite
-- Bootstrap
+- Semantic UI
