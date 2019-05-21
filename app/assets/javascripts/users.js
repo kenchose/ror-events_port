@@ -22,14 +22,14 @@ $(document).ready(function(){
         $('.small.test.modal').modal("show");
     })
     
-    $('.red.cancel.button').on('click', function(){
-        $('.small.test.modal').modal("hide");
-    });
-
+    
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
-
+    
+    $('.red.cancel.button').on('click', function(){
+        $('.small.test.modal').modal("hide");
+    });
     // $('.test.modal').modal('attach events', '.test.button', 'show');
 
 });

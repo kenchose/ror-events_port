@@ -1,0 +1,41 @@
+body {
+  background-color: #CDD3D5;
+}
+
+#wrapper {
+  min-height: calc(100vh - 65px - 56px);
+}
+
+.ui .image {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.ui .button.animation {
+  background: transparent;
+  margin-top: 10px;
+}
+
+.ui .button.animation:hover {
+  background: transparent;
+}
+
+.ui .field {
+  padding: 10px 0;
+}
+
+.form-fields {
+  text-align: center;
+}
+
+.session-form {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 90px;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+/*# sourceMappingURL=sessions.css.map */

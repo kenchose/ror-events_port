@@ -15,96 +15,120 @@
  */
 
 //  @import "bootstrap";
-// @import "semantic-ui/collections/menu";
+//  @import "semantic-ui/collections/menu";
 //  @import "semantic ui"
 //  @import "users";
 //  @import "events";
 //  @import "sessions";
-//  * {
-//     box-sizing: border-box;
-//     padding: 0;
-//     margin: 0 auto;
-// }
 
-// HEADER
-// #home {
-//     width: 100%;
-//     position: relative;
-//     margin: 0 auto;
-// }
-
-// .navbar {
-//     width: 100%;
-//     margin: 0;
-//     background-color: black;
-// }
-// .nav-link {
-    //     color: 	#17a2b8;
-    //     &:hover {
-        //         color:#17a2b8;
-        //     }
-        // }
-        
-        // .submitLink {
-            //     background-color: transparent;
-            //     border: none;
-            //     color: 	#17a2b8;
-            //     cursor: pointer;
-            // }
 @import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik|Karla|Space+Mono:700');
-// @import url('https://fonts.googleapis.com/css?family=Arimo:700|Rubik');
+$breakpoint-desktops: "(min-height:1281px)";
+$breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
+$breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
+$breakpoint-phone-large:"(min-width:481px) and (max-width:767px)";
+$breakpoint-phone:"(min-width:320px) and (max-width:479px)";
+// @media #{$breakpoint-desktops}
+// @media #{$breakpoint-laptops} 
+// @media #{$breakpoint-tablets} 
+// @media #{$breakpoint-phone-large} 
+// @media #{$breakpoint-phone} 
 
-//  HEADER
-.ui.inverted.segment {
-    margin: 0;
-    border-radius: 0;
-    .item:hover {
-        text-decoration: underline;
-        text-decoration-color: red;
-    }
-    .pointing.menu {
-        padding:0;
-    }
-    a {
-        font-size: large;
-    }
-    a:hover{
-        text-decoration: none;
-    }
-}
-// END-HEADER
+// $break-mobile: 599px;
+// $break-tablet: 899px;
+// $break-lap: 1199px;
 
-.alert {
-    display: inline-block;
+* {
+    font-family: 'Rubik', sans-serif;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
 }
 
-body {
-    background-color: #E0E2DB;
-    height:100%;
+html, body {
+    // height:100%;
+    font-size:1rem;
+    line-height: 1.5;
+    overflow-x:hidden;
+    background-color: #E0E2DB; //original
 }
 
 h1, h2{
     font-family: 'Karla', sans-serif;
 }
 
-* {
-    font-family: 'Rubik', sans-serif;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-#footer {
-    // position: fixed;
-    bottom:0px;
-    width:100%;
-}
-
-#footer-copyright {
-    padding-bottom:0px;
-}
-
 .ui.message {
     margin: 0;
 }
+
+
+//  NAVBAR
+#navbar {
+    .logo {
+        padding-top:3px;
+        padding-left:5px;
+    }
+    .navbar-menu {
+        width:100%;
+    }
+    .sign-log-button {
+        font-size:.8rem;
+    }
+    .main-button {
+        padding:0px 5px !important;
+    }
+}
+
+
+.alert {
+    display: inline-block;
+}
+
+
+//FOOTER//
+
+#footer {
+    align-items:center;
+    width:100%;
+    background:#000;
+    color: white;
+    .envelope {
+        color:white;
+    }
+    p {
+        margin:0;
+    }
+    .footer-content {
+        padding:15px;
+        text-align: center;
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// #footer { original
+//     // bottom:0px;
+//     width:100%;
+//     // position:relative;
+//     // height:20px; //same as the main content in each html
+//     // margin-top:-20px; //same as the main content in each html
+//     // clear:both;
+// }
+
+
+// #toggle-menu:hover {
+//     cursor: pointer;
+// }
+// #smaller-screen-menu {
+//     @media only screen and (min-width: 767px) {
+//         visibility: hidden;
+//     }
+//     @media only screen and (max-width: 767px) {
+//         border-radius: 0%;
+//         padding: 0;
+//         top: 0;
+//         padding: 0.7em;
+//         margin-top: 0;
+//     }
+// }
+

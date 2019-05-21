@@ -1,79 +1,105 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-* {
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
+
+$breakpoint-desktops: "(min-height:1281px)";
+$breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
+$breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
+$breakpoint-phone-large:"(min-width:481px) and (max-width:767px)";
+$breakpoint-phone:"(min-width:320px) and (max-width:479px)";
+// @media #{$breakpoint-desktops}
+// @media #{$breakpoint-laptops} 
+// @media #{$breakpoint-tablets} 
+// @media #{$breakpoint-phone-large} 
+// @media #{$breakpoint-phone} 
+
+$break-mobile: 599px;
+$break-tablet: 899px;
+$break-lap: 1199px;
+// body, html {
+//     @media screen and (max-width: $break-mobile) {
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//     }
+// }
+
+
+#wrapper {
+    min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
-.welcome-wrapper {
-    position: relative;
-}
-// @import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik');
-// font-family: 'Rubik', sans-serif;
-.welcome-wrapper {
-    background-image: url("hawaii.jpg");
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("hawaii.jpg");
-    background-position: center;
+
+#header {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("hawaii2.jpg");
+    height:80vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position:center;
+    background-size:cover;
+    position:relative;
 }
-.ui.container {
-    background: transparent;
-    // top: 50%;
-    // left: 10%;
-    .edit {
-        text-align: center;
+
+.header-content {
+    text-align: center;
+    display:inline-block;
+    width:100%;
+    top:40%;
+    position:absolute;
+    color:white;
+    padding:0 2rem;
+    h1 {
+        font-size:3.5em;
+        font-family: "Nunito", sans-serif;;
+    }
+    p {
+        font-size:1.8em;
     }
 }
 
-h1 {
-    text-align: right;
-    font-size: 3rem;
-    padding: 3rem 10rem;
-    // font-family: 'Karla', sans-serif;
+.signup-form {
+    padding:4rem;
+    .ui.fluid.dropdown {
+        height: 41px;
+        margin-top:27px;
+    }
 }
 
-.ui.fluid.dropdown {
-    height: 42px;
-    margin:0;
-}
 
 .ui.form {
-    .field>label {
-    color: white;
-    }
-    .checkbox label {
-        font-size: 1.1em;
-        color: white;
+    .field {
+        margin:0px;
     }
     a {
         font-size: bolder;
-        color: aqua;
+        color: rgb(0, 196, 196);
         font-size: 1.2em;
     }
 }
 
-.ui.checkbox label {
-    font-family: 'Arimo', sans-serif;
+.list {
+    list-style: none;
 }
+// .ui.large.form.error.segmant {
+//     @media only screen and (max-width: $break-mobile) {
+//         margin-top: 55%;
+//     }
+// }
 
-ui.red.cancel.button a{
-    font-size: 1rem;
-    font-weight: 100;
-}
-.ui.red.cancel.button a{
-    text-decoration: none;
-    color:white;
-}
-.ui.red.cancel.button a:hover{
-    text-decoration: none;
-    color:white;
-}
-.ui.container.edit {
-    margin-top:1em;
-}
+// .ui.checkbox label {
+//     font-family: 'Arimo', sans-serif;
+// }
 
-.user-wrapper {
-    margin-bottom: 8em;
-}
+// .ui.red.cancel.button a{
+//     font-size: 1rem;
+//     font-weight: 900;
+//     text-decoration: none;
+//     color:white;
+//     &:hover {
+//         text-decoration: none;
+//         color: white;
+//     }
+// }
+
+// .ui.container.edit {
+//     padding-top:3em;
+// }

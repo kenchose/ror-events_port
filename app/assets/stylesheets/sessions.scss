@@ -1,13 +1,27 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$breakpoint-desktops: "(min-height:1281px)";
+$breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
+$breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
+$breakpoint-phone-large:"(min-width:481px) and (max-width:767px)";
+$breakpoint-phone:"(min-width:320px) and (max-width:479px)";
+// @media #{$breakpoint-desktops}
+// @media #{$breakpoint-laptops} 
+// @media #{$breakpoint-tablets} 
+// @media #{$breakpoint-phone-large} 
+// @media #{$breakpoint-phone} 
+
+$break-mobile: 599px;
+$break-tablet: 899px;
+$break-lap: 1199px;
 
 body {
     background-color: #CDD3D5;
 }
 
-.column {
-    max-width: 450px;
+#wrapper {
+    min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
 
 .ui{
@@ -18,22 +32,32 @@ body {
     .button.animation {
         background: transparent;
         margin-top: 10px;
-    }
-    .button.animation:hover {
-        background: transparent;
+        &:hover {
+            background: transparent;
+        }
     }
     .field {
         padding: 10px 0;
     }
 }
 
-.ui.session-form {
-    height: 86%;
+
+.form-fields {
+    text-align:center; 
 }
+
+
+.session-form {
+    width:500px;
+    margin:0 auto;
+    padding-top:90px;
+}
+
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
-h2 {
-    height: 100%;
-}
+
+// h2 {
+//     height: 100%;
+// }

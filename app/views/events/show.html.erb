@@ -11,26 +11,32 @@
         </div>
     <% end %>
     
-    <div class="ui container show-container">
-        <div class="ui horizontal divider"><h2>People from around the nation that are coming!</h2></div>
-        <table class="ui fixed table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @users.each do | user |%>
-                <% if user.joining_event.ids.include?(@event.id) %>
-                <tr>
-                    <td class="event-show"><%= user.first_name %><%= user.last_name %></td>
-                    <td class="event-show"><%= user.city %>, <%= user.state %></td>
-                </tr>
-                <% end %>
-                <% end %>
-            </tbody>
-        </table>
+    <div class="ui  container show-container">
+        <div class="ui horizontal divider">
+            <h2>People from around the nation that are coming!</h2>
+        </div>
+        <% if @event.users.any? %>
+            <table class="ui fixed table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do | user |%>
+                    <% if user.joining_event.ids.include?(@event.id) %>
+                    <tr>
+                        <td class="event-show"><%= user.first_name %><%= user.last_name %></td>
+                        <td class="event-show"><%= user.city %>, <%= user.state %></td>
+                    </tr>
+                    <% end %>
+                    <% end %>
+                </tbody>
+            </table>
+        <% else %>
+            <h2>No one is attending the event</h2>
+        <% end %>
     </div>
 
     <div class="ui grid container msg-container ">
@@ -61,7 +67,7 @@
                             <h2 style="margin-bottom:1em; text-decoration: underline; font-weight: 900;">Message Board</h2>
                             <% if @message.exists? %>
                                 <% @message.each do |m| %>
-                                    <a href="/users/<%= m.user.id %>" class="author"><%= m.user.first_name %> <%= m.user.last_name%></a> 
+                                    <%= m.user.first_name %> <%= m.user.last_name%>
                                     <div class="metadata">
                                         <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
                                     </div>
@@ -73,18 +79,18 @@
                             <% end %>
                         </div>
                     </div>
-                    <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
-                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                        <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
-                        <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
-                        <div class="field">
-                            <textarea name="message[content]"></textarea>
-                        </div>
-                        <div class="ui blue labeled submit icon button" id="msg-submit">
-                            <i class="icon edit"></i><button class="ui primary button msg-button" type="submit">Add Comment</button>
-                        </div>
-                    </form>
-                </div> 
+                </div>
+                <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
+                    <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
+                    <div class="field">
+                        <textarea name="message[content]"></textarea>
+                    </div>
+                    <div class="ui blue labeled submit icon button" id="msg-submit">
+                        <i class="icon edit"></i><button class="ui primary button msg-button" type="submit">Add Comment</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
+#wrapper {
+  min-height: calc(100vh - 65px - 56px);
+}
+
+#header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("hawaii2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hawaii2.jpg");
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.header-content {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  top: 40%;
+  position: absolute;
+  color: white;
+  padding: 0 2rem;
+}
+
+.header-content h1 {
+  font-size: 3.5em;
+  font-family: "Nunito", sans-serif;
+}
+
+.header-content p {
+  font-size: 1.8em;
+}
+
+.signup-form {
+  padding: 4rem;
+}
+
+.signup-form .ui.fluid.dropdown {
+  height: 41px;
+  margin-top: 27px;
+}
+
+.ui.form .field {
+  margin: 0px;
+}
+
+.ui.form a {
+  font-size: bolder;
+  color: #00c4c4;
+  font-size: 1.2em;
+}
+
+.list {
+  list-style: none;
+}
+/*# sourceMappingURL=users.css.map */

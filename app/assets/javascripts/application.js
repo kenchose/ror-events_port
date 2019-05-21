@@ -15,3 +15,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+    $('#toggle-menu').click(function() {
+        $('.ui.sidebar')
+        .sidebar('toggle')
+    });
+    function setReload(){
+        setReloadTime(function(){
+            location.reload();
+        }, 1000);
+    }
+    // $('#toggle-menu').on('click', function() {
+    //     $('.ui.labeled.icon.sidebar')
+    //     .sidebar('toggle').toggleClass('toggle-menu')
+    // });
+});

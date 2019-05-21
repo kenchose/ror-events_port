@@ -17,6 +17,13 @@
 
 // }
 
+$break-mobile: 599px;
+$break-tablet: 899px;
+$break-lap: 1199px;
+
+#wrapper {
+    min-height:100%;
+}
 input, textarea, select{
     opacity: 0.9;
 }
@@ -45,6 +52,7 @@ button {
 
 .ui.event.container {
     width: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -68,28 +76,26 @@ button {
 .event-wrapper {
     margin-bottom: 3em;
 }
-// .ui {
-    //     .item:hover {
-        //         text-decoration: underline;
-        //         border-bottom-color: red;
-        //     }
-        // }
-        
-        .ui.violet.button {
-            width: 110px;
-            height: 45px;
-            margin: auto 0;
-            font-size: 1rem;
-            padding: 0;
-        }
-        .ui.fluid.dropdown {
-            height: 36px;
-            margin-top: 23px;
-        }
+
+
+.ui.violet.button {
+    width: 110px;
+    height: 45px;
+    margin: auto 0;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.ui.fluid.dropdown {
+    height: 36px;
+    margin-top: 23px;
+}
+
 .ui.mini.modal.header {
     padding: 0;
     margin: 0;
 }
+
 .ui.modal {
     .header {
         height:8vh;
@@ -99,6 +105,7 @@ button {
 #left-name {
     float:left;
 }
+
 .ui.edit-wrapper {
     background-image: url('../assets/hike.jpeg');
     background-size: cover;
@@ -111,11 +118,10 @@ button {
 
 .edit-button {
     color: white;
-}
-
-.edit-button:hover {
-    text-decoration: none;
-    color: white;
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .ui.form.edit-form {
@@ -132,7 +138,7 @@ button {
 
 .ui.horizontal.divider {
     color:red;
-    margin: 3em 0
+    margin: 3em 0;
 }
 
 #msg-submit:hover {
@@ -162,6 +168,33 @@ button {
 
 .ui.contact-icon {
     margin: 0 8px;
+}
+
+.ui.comments {
+    overflow: auto;
+    height: 400px;
+}
+.form-textarea {
+    margin:0;
+}
+
+.mobile-hidden {
+    @media only screen and (max-width: 767px) {
+        visibility: hidden !important;
+        display: none;
+        width:0;
+        height:0;
+    }
+}
+
+
+.event-location {
+    visibility: hidden;
+    @media only screen and (max-width: 767px) {
+        visibility:visible;
+        text-align: center;
+        font-weight: bolder;
+    }
 }
 
 // .ui.card {
