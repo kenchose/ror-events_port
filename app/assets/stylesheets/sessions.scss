@@ -21,6 +21,9 @@ body {
 }
 
 #wrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
 
@@ -49,8 +52,6 @@ body {
 
 .session-form {
     width:500px;
-    margin:0 auto;
-    padding-top:90px;
 }
 
 input[type=date]::-webkit-inner-spin-button {
