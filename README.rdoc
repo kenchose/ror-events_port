@@ -1,28 +1,6 @@
-== README
+Events is a web application that you can see all events user's posted. Events is grouped by the state that your living in and events outside your state. Users can add new events and have the ability to join other users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Technology:
+- Ruby on Rails
+- SQLite
+- Semantic UI
