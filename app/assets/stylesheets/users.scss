@@ -1,6 +1,9 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require_self
+*/
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 
 $breakpoint-desktops: "(min-height:1281px)";
@@ -25,7 +28,6 @@ $break-lap: 1199px;
 //     }
 // }
 
-
 #wrapper {
     min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
@@ -37,6 +39,9 @@ $break-lap: 1199px;
     background-position:center;
     background-size:cover;
     position:relative;
+    @media #{$breakpoint-phone} {
+       height:50vh;
+    }
 }
 
 .header-content {
@@ -61,6 +66,9 @@ $break-lap: 1199px;
     .ui.fluid.dropdown {
         height: 41px;
         margin-top:27px;
+    }
+    .submit-btn {
+        padding-top:15px;
     }
 }
 

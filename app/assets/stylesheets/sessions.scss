@@ -1,6 +1,9 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require_self
+*/
 $breakpoint-desktops: "(min-height:1281px)";
 $breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
 $breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
@@ -21,11 +24,17 @@ body {
 }
 
 #wrapper {
+    min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
     display:flex;
     justify-content: center;
     align-items: center;
-    min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
+
+
+.main-container {
+    margin:2rem 2rem 3rem;
+}
+
 
 .ui{
     .image {
@@ -51,14 +60,12 @@ body {
 
 
 .session-form {
-    width:500px;
+    width:600px;
+    height:400px;
+    padding:1rem;
 }
 
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
-
-// h2 {
-//     height: 100%;
-// }

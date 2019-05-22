@@ -10,10 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+*= require application.scss
  */
 @import url("https://fonts.googleapis.com/css?family=Charmonman|Rubik|Karla|Space+Mono:700");
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 * {
   font-family: 'Rubik', sans-serif;
   margin: 0px;
@@ -75,6 +76,10 @@ h1, h2 {
   margin: 0;
 }
 
+#footer .icon {
+  margin-right: 12px;
+}
+
 #footer .footer-content {
   padding: 15px;
   text-align: center;
@@ -82,5 +87,9 @@ h1, h2 {
 
 #footer .footer-content p {
   font-size: 1.1rem;
+}
+
+#footer .copyright {
+  padding-right: 15px;
 }
 /*# sourceMappingURL=application.css.map */

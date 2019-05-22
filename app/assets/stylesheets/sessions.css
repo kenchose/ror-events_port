@@ -1,8 +1,12 @@
+/*
+ *= require_self
+*/
 body {
   background-color: #CDD3D5;
 }
 
 #wrapper {
+  min-height: calc(100vh - 65px - 56px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,7 +16,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: calc(100vh - 65px - 56px);
+}
+
+.main-container {
+  margin: 2rem 2rem 3rem;
 }
 
 .ui .image {
@@ -38,7 +45,9 @@ body {
 }
 
 .session-form {
-  width: 500px;
+  width: 600px;
+  height: 400px;
+  padding: 1rem;
 }
 
 input[type=date]::-webkit-inner-spin-button {

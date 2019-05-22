@@ -5,8 +5,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= favicon_link_tag 'favicon.ico' %>
+	<!-- <%= stylesheet_link_tag params[:sessions]%> -->
+	<!-- <%= stylesheet_link_tag params[:users]%> -->
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= favicon_link_tag asset_path('hoppier-brand.png') %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
@@ -49,7 +51,7 @@
 	<footer>
 		<div id="footer">
 			<div class="footer-content">
-				<p>&copy;2019 Hoppier, Inc. All Rights Reserved.<a href="https://github.com/kenchose" target="_blank"><i class="ui github green icon contact-icon"></i></a><a href="https://www.linkedin.com/in/kenny-pham-2a5740101" target="_blank"><i class="ui linkedin icon contact-icon"></i></a><a href="https://plus.google.com/102171157736394833040" target="_blank"><i class="ui google plus red icon contact-icon"></i></a><a href="mailto:kennypm42@gmail.com" target="_blank"><i class="ui envelope outline icon contact-icon"></i></p> 
+				<p><span class="copyright">&copy;2019 Hoppier, Inc. All Rights Reserved.</span><a href="https://github.com/kenchose" target="_blank"><i class="ui github green icon contact-icon"></i></><a href="https://www.linkedin.com/in/kenny-pham-2a5740101" target="_blank"><i class="ui linkedin icon contact-icon"></i></a><a href="https://plus.google.com/102171157736394833040" target="_blank"><i class="ui google plus red icon contact-icon"></i></a><a href="mailto:kennypm42@gmail.com" target="_blank"><i class="ui envelope outline icon contact-icon"></i></p> 
 			</div>
 		</div>        
 	</footer>

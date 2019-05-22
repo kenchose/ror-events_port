@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "sessions", media: 'all' %>
 <% if flash[:errors] %>
     <div class="ui error message ">
+        <i class="close icon"></i>
         <% flash[:errors].each do |n| %>
             <ol><%= n %></ol>
         <% end %>
@@ -8,7 +10,7 @@
 
 
 <div id="wrapper">
-    <div class="container">
+    <div class="container main-container">
         <div class="session-form">
             <h2 class="ui fluid teal centered image header">
                 <img src="../../../assets/lets-go-travel.jpg" class="ui image">

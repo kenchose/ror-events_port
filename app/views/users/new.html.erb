@@ -1,4 +1,5 @@
 <!--SHOW ERRORS AT THE POINT OF ERRORS WITH ERROR ICON-->
+<%= stylesheet_link_tag "users", media: 'all' %>
 <% if flash[:errors] %>
     <div class="ui negative message">
         <h3>There are some errors with your submission</h3>
@@ -128,7 +129,7 @@
                         <label>I agree to the <a href="/messages/terms">Terms and Conditions</a></label>
                     </div>
                 </div>
-                <div class="four wide field">
+                <div class="four wide field submit-btn">
                     <button type="submit" class="ui disabled blue button" id="signup">Sign Up</button>
                 </div>
             </form>

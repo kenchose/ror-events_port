@@ -10,18 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+*= require application.scss
  */
 
 //  @import "bootstrap";
 //  @import "semantic-ui/collections/menu";
-//  @import "semantic ui"
+//  @import "semantic ui";
 //  @import "users";
 //  @import "events";
 //  @import "sessions";
 
 @import url('https://fonts.googleapis.com/css?family=Charmonman|Rubik|Karla|Space+Mono:700');
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 $breakpoint-desktops: "(min-height:1281px)";
 $breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
 $breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
@@ -97,6 +98,9 @@ h1, h2{
     p {
         margin:0;
     }
+    .icon {
+        margin-right:12px;
+    }
     .footer-content {
         padding:15px;
         text-align: center;
@@ -104,31 +108,7 @@ h1, h2{
             font-size: 1.1rem;
         }
     }
+    .copyright {
+        padding-right:15px;
+    }
 }
-
-// #footer { original
-//     // bottom:0px;
-//     width:100%;
-//     // position:relative;
-//     // height:20px; //same as the main content in each html
-//     // margin-top:-20px; //same as the main content in each html
-//     // clear:both;
-// }
-
-
-// #toggle-menu:hover {
-//     cursor: pointer;
-// }
-// #smaller-screen-menu {
-//     @media only screen and (min-width: 767px) {
-//         visibility: hidden;
-//     }
-//     @media only screen and (max-width: 767px) {
-//         border-radius: 0%;
-//         padding: 0;
-//         top: 0;
-//         padding: 0.7em;
-//         margin-top: 0;
-//     }
-// }
-
