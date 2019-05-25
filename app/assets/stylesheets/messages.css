@@ -1,1 +1,5 @@
-/* No CSS *//*# sourceMappingURL=messages.css.map */
+#wrapper {
+  min-height: calc(100vh - 62.5px - 56px);
+  padding: 2rem;
+}
+/*# sourceMappingURL=messages.css.map */

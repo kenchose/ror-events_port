@@ -25,8 +25,8 @@ $(document).ready(function() {
             location.reload();
         }, 1000);
     }
-    // $('#toggle-menu').on('click', function() {
-    //     $('.ui.labeled.icon.sidebar')
-    //     .sidebar('toggle').toggleClass('toggle-menu')
-    // });
+    $('#toggle-menu').on('click', function() {
+        $('.ui.labeled.icon.sidebar')
+        .sidebar('toggle').toggleClass('toggle-menu')
+    });
 });

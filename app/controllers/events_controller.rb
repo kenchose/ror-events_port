@@ -11,6 +11,10 @@ class EventsController < ApplicationController
     @user = User.find(session[:user_id])
     @event = Event.new( event_params )
     if @event.save 
+      @join = Join.new(user: @user, event: @event)
+      if @join.save
+        flash[:notice] = ["You have joined"]
+      end
       flash[:notice] = ["You have successfully created a new event."]
       redirect_to events_path
     else
@@ -39,7 +43,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @users = User.all
     @messages = Message.all
-    @message = Message.where(event_id:@event.id)
+    @message = Message.where(event_id:@event.id).order("created_at DESC")
   end
 
   def destroy

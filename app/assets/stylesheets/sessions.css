@@ -6,7 +6,7 @@ body {
 }
 
 #wrapper {
-  min-height: calc(100vh - 65px - 56px);
+  min-height: calc(100vh - 62.5px - 56px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

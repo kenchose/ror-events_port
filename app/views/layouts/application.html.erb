@@ -5,8 +5,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<!-- <%= stylesheet_link_tag params[:sessions]%> -->
-	<!-- <%= stylesheet_link_tag params[:users]%> -->
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= favicon_link_tag asset_path('hoppier-brand.png') %>
 	<%= csrf_meta_tags %>
@@ -14,37 +12,40 @@
 <body>
 	<!--NAVIGATION-->
 		<nav id="navbar">
-            <div class="container ui menu navbar-menu">
-                <div class="logo">
-                    <%= image_tag 'hoppier-brand.png', class:'logo' %>
-                </div>
-                <% if current_user %>
-                    <div class="ui right menu">
-                        <div class="item">
-                            <a href="/events"><i class="calendar alternate outline icon"></i>Event Dashboard</a>
-                        </div>
-                        <div class="item">
-                            <a href="/users/<%= current_user.id %>/edit"><i class="user circle outline icon"></i><%= current_user.first_name %></a>
-                        </div>
-                        <div class="item">
-                            <form action="/sessions/<%=current_user.id%>" method="post">
+            <div class="container">
+                <div class="ui secondary pointing menu navbar-menu">
+                    <div class="header item logo">
+                        <%= image_tag 'hoppier-brand.png', class:'logo-img' %>
+                    </div>
+                    <% if current_user %>
+                        <div class="right item">
+                            <a href="/events" class="ui item item-menu">
+                                <i class="calendar alternate outline icon"></i>
+                                Event Dashboard
+                            </a>
+                            <a href="/users/<%= current_user.id %>/edit" class="ui item item-menu">
+                                <i class="user circle outline icon"></i>
+                                <%= current_user.first_name %>
+                            </a>
+                            <form action="/sessions/<%=current_user.id%>" method="post" class="ui item item-menu">
                                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                                 <input type="hidden" name="_method" value="delete">
-                                <button class="ui button" type="submit">Log Out</button>
+                                <input class="logout-btn" type="submit" value="Log Out">
                             </form>
                         </div>
+                    <% else %>
+                    <div class="right menu item">
+                        <div class="ui  main-button buttons">
+                            <button class="ui button sign-log-button"><i class="sign in icon"></i><a href="/sessions/new">Log In</a></button>
+                            <div class="or sign-log-button"></div>
+                            <button class="ui positive button sign-log-button"><i class="users icon"></i><a href="/users/new">Sign Up</a></button>
+                        </div>
                     </div>
-                <% else %>
-                <div class="right menu item">
-                    <div class="ui  main-button buttons">
-                        <button class="ui button sign-log-button"><i class="sign in icon"></i><a href="/sessions/new">Log In</a></button>
-                        <div class="or sign-log-button"></div>
-                        <button class="ui positive button sign-log-button"><i class="users icon"></i><a href="/users/new">Sign Up</a></button>
-                    </div>
+                    <% end %>
                 </div>
-                <% end %>
             </div>
-		</nav>
+        </nav>
+        
 
 		<%= yield %>
 

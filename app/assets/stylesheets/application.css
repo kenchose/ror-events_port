@@ -41,10 +41,28 @@ h1, h2 {
 #navbar .logo {
   padding-top: 3px;
   padding-left: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+#navbar .logo-img {
+  width: 50px;
+  height: 50px;
+  margin-top: 4px;
 }
 
 #navbar .navbar-menu {
   width: 100%;
+  background: white;
+  height: 62.5px;
+}
+
+#navbar .navbar-menu .item-menu {
+  padding-top: 5px;
+}
+
+#navbar .navbar-menu .item-menu:hover {
+  text-decoration: underline;
 }
 
 #navbar .sign-log-button {
@@ -53,6 +71,18 @@ h1, h2 {
 
 #navbar .main-button {
   padding: 0px 5px !important;
+}
+
+#navbar .logout-btn {
+  border: none;
+}
+
+#navbar .logout-btn:hover {
+  cursor: pointer;
+}
+
+#navbar .item-menu {
+  padding-bottom: 9px;
 }
 
 .alert {
@@ -80,6 +110,18 @@ h1, h2 {
   margin-right: 12px;
 }
 
+@media (min-width: 320px) and (max-width: 479px) {
+  #footer .icon {
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #footer .icon {
+    margin-right: 0px;
+  }
+}
+
 #footer .footer-content {
   padding: 15px;
   text-align: center;
@@ -87,6 +129,18 @@ h1, h2 {
 
 #footer .footer-content p {
   font-size: 1.1rem;
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  #footer .footer-content p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #footer .footer-content p {
+    font-size: 0.8rem;
+  }
 }
 
 #footer .copyright {

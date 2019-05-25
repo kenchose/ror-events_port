@@ -1,47 +1,50 @@
-<div class="event-wrapper">
-    <% if flash[:errors] %>
-        <div class="ui negative message">
-            <h3>There are some errors with your submission</h3>
-            <i class="close icon"></i>
-            <% flash[:errors].each do |e| %>
-                <ul class="list">
-                    <p><%= e %></p>
-                </ul>
+<%= stylesheet_link_tag "events", media: "all" %>
+<% if flash[:errors] %>
+<div class="ui negative message">
+    <h3>There are some errors with your submission</h3>
+    <i class="close icon"></i>
+    <% flash[:errors].each do |e| %>
+    <ul class="list">
+        <p><%= e %></p>
+    </ul>
+    <% end %>
+</div>
+<% end %>
+
+<div id="wrapper">
+    <section id="attendee">
+        <div class="ui container attendee-container">
+            <div class="ui horizontal divider">
+                <h2>Attendees from around the nation</h2>
+            </div>
+            <% if @event.users.any? %>
+                <table class="ui fixed table">
+                    <thead>
+                        <tr   id="tr-name-location">
+                            <th>Name</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @users.each do | user |%>
+                            <% if user.joining_event.ids.include?(@event.id) %>
+                            <tr>
+                                <td><%= user.first_name %> <%= user.last_name %></td>
+                                <td><%= user.city %>, <%= user.state %></td>
+                            </tr>
+                            <% end %>
+                        <% end %>
+                    </tbody>
+                </table>
+            <% else %>
+                <h2>No one is attending the event</h2>
             <% end %>
         </div>
-    <% end %>
-    
-    <div class="ui  container show-container">
-        <div class="ui horizontal divider">
-            <h2>People from around the nation that are coming!</h2>
-        </div>
-        <% if @event.users.any? %>
-            <table class="ui fixed table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @users.each do | user |%>
-                    <% if user.joining_event.ids.include?(@event.id) %>
-                    <tr>
-                        <td class="event-show"><%= user.first_name %><%= user.last_name %></td>
-                        <td class="event-show"><%= user.city %>, <%= user.state %></td>
-                    </tr>
-                    <% end %>
-                    <% end %>
-                </tbody>
-            </table>
-        <% else %>
-            <h2>No one is attending the event</h2>
-        <% end %>
-    </div>
+    </section>
 
-    <div class="ui grid container msg-container ">
-        <div class="row">
-            <div class="ten wide column">
+    <section id="card-msg">
+        <div class="ui two column grid container card-msg-container">
+            <div class="ui eight wide column grid container card-container">
                 <div class="ui card">
                     <div class="image">
                         <img src="https://source.unsplash.com/random">
@@ -60,27 +63,30 @@
                     </div>
                 </div>
             </div>
-            <div class="six wide column">
+            <div class="ui eight wide column grid container msg-container">
+                <h3 class="ui dividing header">Message Board</h3>
                 <div class="ui comments">
                     <div class="comment">
-                        <div class="content">
-                            <h2 style="margin-bottom:1em; text-decoration: underline; font-weight: 900;">Message Board</h2>
-                            <% if @message.exists? %>
-                                <% @message.each do |m| %>
-                                    <%= m.user.first_name %> <%= m.user.last_name%>
-                                    <div class="metadata">
-                                        <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
-                                    </div>
-                                    <div class="text">
-                                        <%= m.content %>
-                                    </div>
-                                    <br>
-                                <% end %>
-                            <% end %>
-                        </div>
+                    <% if @message.exists? %>
+                        <% @message.each do |m| %>
+                            <a class="avatar">
+                                <img src="https://source.unsplash.com/collection/190727" alt="avatar">
+                            </a>
+                            <div class="content">
+                                <%= m.user.first_name %> <%= m.user.last_name%>
+                                <div class="metadata">
+                                    <div class="date"><%= m.created_at.strftime("%B %d, %Y")%></div>
+                                </div>
+                                <div class="text">
+                                    <%= m.content %>
+                                </div>
+                                <br>
+                            </div>
+                        <% end %>
+                    <% end %>
                     </div>
                 </div>
-                <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
+                <form action="/8/<%= @event.id %>" class="ui reply form" method="post">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
                     <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
@@ -88,10 +94,10 @@
                         <textarea name="message[content]"></textarea>
                     </div>
                     <div class="ui blue labeled submit icon button" id="msg-submit">
-                        <i class="icon edit"></i><button class="ui primary button msg-button" type="submit">Add Comment</button>
+                        <i class="icon edit"></i><input class="ui primary button msg-button" type="submit" value="Add Comment"></i>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
 </div>

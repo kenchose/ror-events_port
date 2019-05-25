@@ -64,18 +64,43 @@ h1, h2{
 
 //  NAVBAR
 #navbar {
+    //if not current_user
     .logo {
         padding-top:3px;
         padding-left:5px;
+        width:60px;
+        height:60px;
+    }
+    .logo-img {
+        width:50px;
+        height:50px;
+        margin-top:4px;
     }
     .navbar-menu {
         width:100%;
+        background:white;
+        height:62.5px;
+        .item-menu {
+            padding-top:5px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     .sign-log-button {
         font-size:.8rem;
     }
     .main-button {
         padding:0px 5px !important;
+    }
+    .logout-btn {
+        border:none;
+        &:hover {
+            cursor:pointer;
+        }
+    }
+    .item-menu {
+        padding-bottom:9px;
     }
 }
 
@@ -100,12 +125,24 @@ h1, h2{
     }
     .icon {
         margin-right:12px;
+        @media #{$breakpoint-phone} {            
+            margin-right:0px
+        }
+        @media #{$breakpoint-phone-large} {            
+            margin-right:0px;
+        }
     }
     .footer-content {
         padding:15px;
         text-align: center;
         p {
             font-size: 1.1rem;
+            @media #{$breakpoint-phone} {            
+                font-size: 0.8rem;
+            }
+            @media #{$breakpoint-phone-large} {            
+                font-size: 0.8rem;
+            }    
         }
     }
     .copyright {

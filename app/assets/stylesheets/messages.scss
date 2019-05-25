@@ -2,3 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#wrapper {
+    min-height:calc(100vh - 62.5px - 56px);
+    padding:2rem;
+}

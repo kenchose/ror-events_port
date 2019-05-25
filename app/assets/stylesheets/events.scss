@@ -20,61 +20,188 @@
 //     background-size: cover;
 
 // }
+// .header {
+//     width: 100%;
+//     height: 30vh;
+//     background: #f0f0f0;
+// }
+
+// h1 {
+//     text-align: center;
+// }
+
+
+$breakpoint-desktops: (min-height:1281px);
+$breakpoint-laptops: (min-width: 1025px) and (max-width: 1280px);
+$breakpoint-tablets:(min-width:768px) and (max-width:1024px);
+$breakpoint-phone-large:(min-width:481px) and (max-width:767px);
+$breakpoint-phone:(min-width:320px) and (max-width:479px);
+// $breakpoint-desktops: "(min-height:1281px)";
+// $breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
+// $breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
+// $breakpoint-phone-large:"(min-width:481px) and (max-width:767px)";
+// $breakpoint-phone:"(min-width:320px) and (max-width:479px)";
+// @media #{$breakpoint-desktops}
+// @media #{$breakpoint-laptops} 
+// @media #{$breakpoint-tablets} 
+// @media #{$breakpoint-phone-large} 
+// @media #{$breakpoint-phone} 
 
 $break-mobile: 599px;
 $break-tablet: 899px;
 $break-lap: 1199px;
 
 #wrapper {
-    min-height:100%;
+    min-height:calc(100vh - 62.5px - 56px);
 }
+
+
 input, textarea, select{
     opacity: 0.9;
 }
 
-h1 {
-    text-align: center;
-}
 
 table {
     border-collapse: separate;
 }
 
+
 th {
     text-align: center;
 }
 
-button {
-    border-radius: 10px;
+
+#instate_events {
+    .instate-wrapper {
+        padding: 2em 3rem;
+        background-color:#E0E2DB
+    }   
+    .left-name {
+        float:left;
+        margin-left:16px;
+    }     
+    .animated-td {
+        width:363px;
+        text-align: center;
+    }
+    .action-btn {
+        display:inline-block;
+    }
+    .animated-green-btn {
+        margin-bottom:3px;
+    }
+    .edit-button {
+        color: white;
+        &:hover {
+            text-decoration: none;
+            color: white;
+        }
+    }    
 }
 
-// #add_event {
-    // padding-bottom: 3em;
-    // padding-right: 12em;
-    // background-color: white;
-// }
 
-.ui.event.container {
-    width: 100%;
-    overflow-x: hidden;
+#outstate_events {
+    .outstate-wrapper {
+        background-color:#E0E2DB;
+        padding: 2em 3em
+    }
+    .left-name {
+        float:left;
+        margin-left:16px;
+    } 
+    .animated-td {
+        width:363px;
+        text-align:center;
+    }
+    .action-btn {
+        display:inline-block;
+    }
+    .animated-green-btn {
+        margin-bottom:3px;
+    }
+    .edit-button {
+        color: white;
+        &:hover {
+            text-decoration: none;
+            color: white;
+        }
+    }
 }
 
-
-.header {
-    width: 100%;
-    height: 30vh;
-    background: #f0f0f0;
+#add_event {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('wine.jpg');
+    .add-event-form {
+        padding:2rem;
+        label {
+            color:white;
+        }
+        input {
+            margin-bottom:10px;
+        }
+        .dropdown {
+            margin:0px;
+            height:43px;
+        }
+    }
+    // .event-div {
+    //     width: 100%;
+    //     overflow-x: hidden;
+    // }    
+    // .add-event-form {
+    //     // padding: 5em;
+    //     // padding-bottom: 2em;
+    // }    
+    // .ui.form.add-event {
+    //     padding: 5em;
+    //     padding-bottom: 2em;
+    // }    
 }
 
-.instate-wrapper {
-    margin: 8em 3em;
-    padding: 0 2em;
-    background-color:#E0E2DB
+#attendee {
+    .ui.horizontal.divider {
+        margin:3rem 0;
+    }
 }
 
-.outstate-wrapper {
-    margin: 3em;
-    padding: 0 2em
+        @media #{$breakpoint-phone-large} {
+            #tr-name-location {
+                display:none !important;
+            }
+        }
+        @media #{$breakpoint-phone} {
+            #tr-name-location {
+                display:none !important;
+            }    
+        }
+
+
+#card-msg {
+    padding:5rem 0;
+    #msg-submit {
+        padding:0px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .card-container {
+        @media #{$breakpoint-phone-large} {
+            width:100% !important;
+        }
+        @media #{$breakpoint-phone}  {
+                width:100% !important;
+        }
+    }
+    .msg-container {
+        @media #{$breakpoint-phone-large} {
+            width:100% !important;
+        }
+        @media #{$breakpoint-phone}  {
+                width:100% !important;
+        }
+    }
 }
 
 .event-wrapper {
@@ -90,15 +217,18 @@ button {
     padding: 0;
 }
 
+
 .ui.fluid.dropdown {
     height: 36px;
     margin-top: 23px;
 }
 
+
 .ui.mini.modal.header {
     padding: 0;
     margin: 0;
 }
+
 
 .ui.modal {
     .header {
@@ -106,9 +236,7 @@ button {
     }
 }
 
-#left-name {
-    float:left;
-}
+
 
 .ui.edit-wrapper {
     background-image: url('../assets/hike.jpeg');
@@ -116,49 +244,34 @@ button {
     background-repeat: no-repeat;
 }
 
+
 .ui.container.edit-event {
     padding-top:2em;
 }
 
-.edit-button {
-    color: white;
-    &:hover {
-        text-decoration: none;
-        color: white;
-    }
-}
+
+
 
 .ui.form.edit-form {
     padding-bottom: 3em;
 }
 
-.ui.form.add-event {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('wine.jpg');
-    padding: 5em;
-    padding-bottom: 2em;
-}
+
 
 .ui.horizontal.divider {
     color:red;
     margin: 3em 0;
 }
 
-#msg-submit:hover {
-    text-decoration: none;
-}
+
 .ui.icon-edit:hover {
     text-decoration: none;
 }
 
-.msg-container {
-    .row {
-        margin-top: 5em;
-        .column {
-            margin:0 4.8em;
-        }
-    }
+
+
+.list {
+    list-style: none;
 }
 
 #card-header {
@@ -166,21 +279,27 @@ button {
     background-color: white;
 }
 
+
 .ui.inverted.vertical.footer {
     padding: 1em;
 }
+
 
 .ui.contact-icon {
     margin: 0 8px;
 }
 
+
 .ui.comments {
     overflow: auto;
     height: 400px;
 }
+
+
 .form-textarea {
     margin:0;
 }
+
 
 .mobile-hidden {
     @media only screen and (max-width: 767px) {

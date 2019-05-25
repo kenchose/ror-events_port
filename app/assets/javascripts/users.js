@@ -30,6 +30,7 @@ $(document).ready(function(){
     $('.red.cancel.button').on('click', function(){
         $('.small.test.modal').modal("hide");
     });
+
     // $('.test.modal').modal('attach events', '.test.button', 'show');
 
 });

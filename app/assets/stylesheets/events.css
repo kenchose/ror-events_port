@@ -2,15 +2,11 @@
  *= require_self
 */
 #wrapper {
-  min-height: 100%;
+  min-height: calc(100vh - 62.5px - 56px);
 }
 
 input, textarea, select {
   opacity: 0.9;
-}
-
-h1 {
-  text-align: center;
 }
 
 table {
@@ -21,30 +17,145 @@ th {
   text-align: center;
 }
 
-button {
-  border-radius: 10px;
-}
-
-.ui.event.container {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.header {
-  width: 100%;
-  height: 30vh;
-  background: #f0f0f0;
-}
-
-.instate-wrapper {
-  margin: 8em 3em;
-  padding: 0 2em;
+#instate_events .instate-wrapper {
+  padding: 2em 3rem;
   background-color: #E0E2DB;
 }
 
-.outstate-wrapper {
-  margin: 3em;
-  padding: 0 2em;
+#instate_events .left-name {
+  float: left;
+  margin-left: 16px;
+}
+
+#instate_events .animated-td {
+  width: 363px;
+  text-align: center;
+}
+
+#instate_events .action-btn {
+  display: inline-block;
+}
+
+#instate_events .animated-green-btn {
+  margin-bottom: 3px;
+}
+
+#instate_events .edit-button {
+  color: white;
+}
+
+#instate_events .edit-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#outstate_events .outstate-wrapper {
+  background-color: #E0E2DB;
+  padding: 2em 3em;
+}
+
+#outstate_events .left-name {
+  float: left;
+  margin-left: 16px;
+}
+
+#outstate_events .animated-td {
+  width: 363px;
+  text-align: center;
+}
+
+#outstate_events .action-btn {
+  display: inline-block;
+}
+
+#outstate_events .animated-green-btn {
+  margin-bottom: 3px;
+}
+
+#outstate_events .edit-button {
+  color: white;
+}
+
+#outstate_events .edit-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#add_event {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("wine.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("wine.jpg");
+}
+
+#add_event .add-event-form {
+  padding: 2rem;
+}
+
+#add_event .add-event-form label {
+  color: white;
+}
+
+#add_event .add-event-form input {
+  margin-bottom: 10px;
+}
+
+#add_event .add-event-form .dropdown {
+  margin: 0px;
+  height: 43px;
+}
+
+#attendee .ui.horizontal.divider {
+  margin: 3rem 0;
+}
+
+@media (max-width: 767px) {
+  #tr-name-location {
+    display: none !important;
+  }
+}
+
+@media (max-width: 479px) {
+  #tr-name-location {
+    display: none !important;
+  }
+}
+
+#card-msg {
+  padding: 5rem 0;
+}
+
+#card-msg #msg-submit {
+  padding: 0px;
+}
+
+#card-msg #msg-submit:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  #card-msg .card-container {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 479px) {
+  #card-msg .card-container {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #card-msg .msg-container {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 479px) {
+  #card-msg .msg-container {
+    width: 100% !important;
+  }
 }
 
 .event-wrapper {
@@ -73,10 +184,6 @@ button {
   height: 8vh;
 }
 
-#left-name {
-  float: left;
-}
-
 .ui.edit-wrapper {
   background-image: url("../assets/hike.jpeg");
   background-size: cover;
@@ -87,26 +194,8 @@ button {
   padding-top: 2em;
 }
 
-.edit-button {
-  color: white;
-}
-
-.edit-button:hover {
-  text-decoration: none;
-  color: white;
-}
-
 .ui.form.edit-form {
   padding-bottom: 3em;
-}
-
-.ui.form.add-event {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("wine.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("wine.jpg");
-  padding: 5em;
-  padding-bottom: 2em;
 }
 
 .ui.horizontal.divider {
@@ -114,20 +203,12 @@ button {
   margin: 3em 0;
 }
 
-#msg-submit:hover {
-  text-decoration: none;
-}
-
 .ui.icon-edit:hover {
   text-decoration: none;
 }
 
-.msg-container .row {
-  margin-top: 5em;
-}
-
-.msg-container .row .column {
-  margin: 0 4.8em;
+.list {
+  list-style: none;
 }
 
 #card-header {
