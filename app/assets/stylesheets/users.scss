@@ -22,7 +22,7 @@ $break-tablet: 899px;
 $break-lap: 1199px;
 
 #wrapper {
-    min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
+    min-height:calc(100vh - 62.5px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
 }
 
 #header {

@@ -1,7 +1,7 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
-$(document).ready(function(){
+$(document).on('turbolinks:load', () => {
     $("input[name=terms]").change(function(){
         $("#signup").removeClass("ui disabled yellow button large").addClass("ui yellow button");
     });
@@ -27,6 +27,5 @@ $(document).ready(function(){
     $('.red.cancel.button').on('click', function(){
         $('.small.test.modal').modal("hide");
     });
-
 });
 

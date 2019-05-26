@@ -47,7 +47,7 @@
             <div class="ui eight wide column grid container card-container">
                 <div class="ui card">
                     <div class="image">
-                        <img src="https://source.unsplash.com/random">
+                        <img src="https://source.unsplash.com/user/erondu/400x300">
                     </div>
                     <div class="content">
                         <div id="card-header" class="header"><%= @event.name %></div>
@@ -71,7 +71,6 @@
                         <% @message.each do |m| %>
                             <a class="avatar">
                                 <img src="https://source.unsplash.com/80x80/?people" alt="avatar">
-                                <!-- <img src="https://source.unsplash.com/collection/190727" alt="avatar"> -->
                             </a>
                             <div class="content">
                                 <%= m.user.first_name %> <%= m.user.last_name%>
@@ -87,7 +86,7 @@
                     <% end %>
                     </div>
                 </div>
-                <form action="/8/<%= @event.id %>" class="ui reply form" method="post">
+                <form action="/messages/<%= @event.id %>" class="ui reply form" method="post">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <input type="hidden" name="message[event_id]" value="<%= @event.id %>">
                     <input type="hidden" name="message[user_id]" value="<%= current_user.id %>">
