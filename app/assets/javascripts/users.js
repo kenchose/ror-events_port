@@ -3,7 +3,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function(){
     $("input[name=terms]").change(function(){
-        $("#signup").removeClass("ui disabled yellow button large").addClass("ui yellow button large");
+        $("#signup").removeClass("ui disabled yellow button large").addClass("ui yellow button");
     });
 
     $("input[name=terms]").click(function(){
@@ -14,9 +14,6 @@ $(document).ready(function(){
         }
     });
 
-    // $('.item').hover(function(){
-    //     $(this).addClass('.active');
-    // });
 
     $('.delete-event').on('click', function(){
         $('.small.test.modal').modal("show");
@@ -30,8 +27,6 @@ $(document).ready(function(){
     $('.red.cancel.button').on('click', function(){
         $('.small.test.modal').modal("hide");
     });
-
-    // $('.test.modal').modal('attach events', '.test.button', 'show');
 
 });
 

@@ -15,18 +15,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function() {
-    $('#toggle-menu').click(function() {
-        $('.ui.sidebar')
-        .sidebar('toggle')
-    });
+$(document).on('turbolinks:load', () => { //not $(document).ready(()=>) due to the newly added Turbolinks gem. It makes your application behave like a single page JavaScript application. It has a few benefits (it's faster), but it unfortunately breaks some existing events like $(document).ready() because the page is never reloaded
     function setReload(){
         setReloadTime(function(){
             location.reload();
         }, 1000);
     }
-    $('#toggle-menu').on('click', function() {
-        $('.ui.labeled.icon.sidebar')
-        .sidebar('toggle').toggleClass('toggle-menu')
-    });
+    $('#hamburger-link').on('click', () => {
+        $('#sidebar-toggle').sidebar('toggle');
+    })
 });

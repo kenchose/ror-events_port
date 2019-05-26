@@ -85,6 +85,52 @@ h1, h2 {
   padding-bottom: 9px;
 }
 
+@media (min-width: 481px) and (max-width: 767px) {
+  #navbar .small-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  #navbar .small-nav {
+    display: none;
+  }
+}
+
+#navbar .hamburger {
+  display: none;
+}
+
+#navbar .hamburger #hamburger-link {
+  cursor: pointer;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #navbar .hamburger {
+    display: unset;
+  }
+  #navbar .hamburger .logout-btn {
+    color: red !important;
+    border: none;
+  }
+  #navbar .hamburger .logout-btn:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  #navbar .hamburger {
+    display: unset;
+  }
+  #navbar .hamburger .logout-btn {
+    border: none;
+    color: red !important;
+  }
+  #navbar .hamburger .logout-btn:hover {
+    cursor: pointer;
+  }
+}
+
 .alert {
   display: inline-block;
 }
@@ -110,18 +156,6 @@ h1, h2 {
   margin-right: 12px;
 }
 
-@media (min-width: 320px) and (max-width: 479px) {
-  #footer .icon {
-    margin-right: 0px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  #footer .icon {
-    margin-right: 0px;
-  }
-}
-
 #footer .footer-content {
   padding: 15px;
   text-align: center;
@@ -133,13 +167,13 @@ h1, h2 {
 
 @media (min-width: 320px) and (max-width: 479px) {
   #footer .footer-content p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
   #footer .footer-content p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 

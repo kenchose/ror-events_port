@@ -18,21 +18,39 @@
                         <%= image_tag 'hoppier-brand.png', class:'logo-img' %>
                     </div>
                     <% if current_user %>
-                        <div class="right item">
-                            <a href="/events" class="ui item item-menu">
-                                <i class="calendar alternate outline icon"></i>
-                                Event Dashboard
-                            </a>
-                            <a href="/users/<%= current_user.id %>/edit" class="ui item item-menu">
-                                <i class="user circle outline icon"></i>
-                                <%= current_user.first_name %>
-                            </a>
-                            <form action="/sessions/<%=current_user.id%>" method="post" class="ui item item-menu">
-                                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                                <input type="hidden" name="_method" value="delete">
-                                <input class="logout-btn" type="submit" value="Log Out">
-                            </form>
-                        </div>
+                    <div class="right item hamburger">
+                        <p id="hamburger-link" class="item"><i class="bars icon"></i></p>
+                    </div>
+                    <div class="right item small-nav">
+                        <a href="/events" class="ui item item-menu">
+                            <i class="calendar alternate outline icon"></i>
+                            Event Dashboard
+                        </a>
+                        <a href="/users/<%= current_user.id %>/edit" class="ui item item-menu">
+                            <i class="user circle outline icon"></i>
+                            <%= current_user.first_name %>
+                        </a>
+                        <form action="/sessions/<%=current_user.id%>" method="post" class="ui item item-menu">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                            <input type="hidden" name="_method" value="delete">
+                            <input class="logout-btn" type="submit" value="Log Out">
+                        </form>
+                    </div>
+                    <div id="sidebar-toggle" class="ui top demo vertical inverted sidebar labeled icon menu">
+                        <a href="/events" class="ui item item-menu">
+                            <i class="calendar alternate outline icon"></i>
+                            Event Dashboard
+                        </a>
+                        <a href="/users/<%= current_user.id %>/edit" class="ui item item-menu">
+                            <i class="user circle outline icon"></i>
+                            <%= current_user.first_name %>
+                        </a>
+                        <form action="/sessions/<%=current_user.id%>" method="post" class="ui item item-menu">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                            <input type="hidden" name="_method" value="delete">
+                            <input class="ui button logout-btn" type="submit" value="Logout">
+                        </form>
+                    </div>
                     <% else %>
                     <div class="right menu item">
                         <div class="ui  main-button buttons">

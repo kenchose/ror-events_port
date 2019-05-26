@@ -102,6 +102,43 @@ h1, h2{
     .item-menu {
         padding-bottom:9px;
     }
+    .small-nav {
+        @media #{$breakpoint-phone-large} {
+            display:none;
+            
+        }
+        @media #{$breakpoint-phone} {
+            display:none
+        }
+    }
+    .hamburger {
+        display:none;
+        #hamburger-link {
+            cursor:pointer;
+        }
+        @media #{$breakpoint-phone-large} {
+            display:unset;
+            .logout-btn {
+                color:red !important;
+                border:none;
+                &:hover {
+                    cursor:pointer;
+                }
+            }
+        
+        }
+        @media #{$breakpoint-phone} {
+            display:unset;
+            .logout-btn {
+                border:none;
+                color:red !important;
+                &:hover {
+                    cursor:pointer;
+                }
+            }
+        
+        }
+    }
 }
 
 
@@ -125,12 +162,6 @@ h1, h2{
     }
     .icon {
         margin-right:12px;
-        @media #{$breakpoint-phone} {            
-            margin-right:0px
-        }
-        @media #{$breakpoint-phone-large} {            
-            margin-right:0px;
-        }
     }
     .footer-content {
         padding:15px;
@@ -138,10 +169,10 @@ h1, h2{
         p {
             font-size: 1.1rem;
             @media #{$breakpoint-phone} {            
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
             @media #{$breakpoint-phone-large} {            
-                font-size: 0.8rem;
+                font-size: 1rem;
             }    
         }
     }
