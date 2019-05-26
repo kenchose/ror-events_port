@@ -67,4 +67,17 @@
 .list {
   list-style: none;
 }
+
+#edit-user .edit-form {
+  padding: 120px 2rem 100px;
+}
+
+#edit-user .edit-form label {
+  margin-top: 2.5rem;
+}
+
+#edit-user .cancel-edit-btn {
+  color: #fff;
+  font-size: 1rem;
+}
 /*# sourceMappingURL=users.css.map */

@@ -33,9 +33,9 @@
 
 $breakpoint-desktops: (min-height:1281px);
 $breakpoint-laptops: (min-width: 1025px) and (max-width: 1280px);
-$breakpoint-tablets:(min-width:768px) and (max-width:1024px);
-$breakpoint-phone-large:(min-width:481px) and (max-width:767px);
-$breakpoint-phone:(min-width:320px) and (max-width:479px);
+$breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
+$breakpoint-phone-large:"(min-width:481px) and (max-width:767px)";
+$breakpoint-phone:"(min-width:320px) and (max-width:479px)";
 // $breakpoint-desktops: "(min-height:1281px)";
 // $breakpoint-laptops: "(min-width: 1025px) and (max-width: 1280px)";
 // $breakpoint-tablets:"(min-width:768px) and (max-width:1024px)";
@@ -86,6 +86,12 @@ th {
     }
     .action-btn {
         display:inline-block;
+        justify-content: center;
+        margin:3px 0;
+        // @media #{$breakpoint-tablets} {
+        //     // text-align: center;
+        //     // margin:3px 0;
+        // }
     }
     .animated-green-btn {
         margin-bottom:3px;
@@ -102,8 +108,8 @@ th {
 
 #outstate_events {
     .outstate-wrapper {
+        padding: 2em 3em;
         background-color:#E0E2DB;
-        padding: 2em 3em
     }
     .left-name {
         float:left;
@@ -115,6 +121,22 @@ th {
     }
     .action-btn {
         display:inline-block;
+        margin:3px 0;
+        justify-content: center;
+        // @media #{$breakpoint-tablets} {
+        //     text-align: center;
+        // }
+    }
+    .action-btn-edit {
+        @media #{$breakpoint-tablets} {
+            margin-left:6px
+        }
+        @media #{$breakpoint-phone-large} {
+            margin-left:6px
+        }
+        @media #{$breakpoint-phone} {
+            margin-left:6px
+        }
     }
     .animated-green-btn {
         margin-bottom:3px;

@@ -34,6 +34,10 @@ th {
 
 #instate_events .action-btn {
   display: inline-block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3px 0;
 }
 
 #instate_events .animated-green-btn {
@@ -50,8 +54,8 @@ th {
 }
 
 #outstate_events .outstate-wrapper {
-  background-color: #E0E2DB;
   padding: 2em 3em;
+  background-color: #E0E2DB;
 }
 
 #outstate_events .left-name {
@@ -66,6 +70,28 @@ th {
 
 #outstate_events .action-btn {
   display: inline-block;
+  margin: 3px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #outstate_events .action-btn-edit {
+    margin-left: 6px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #outstate_events .action-btn-edit {
+    margin-left: 6px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  #outstate_events .action-btn-edit {
+    margin-left: 6px;
+  }
 }
 
 #outstate_events .animated-green-btn {
@@ -110,13 +136,13 @@ th {
   margin: 3rem 0;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
   #tr-name-location {
     display: none !important;
   }
 }
 
-@media (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 479px) {
   #tr-name-location {
     display: none !important;
   }
@@ -134,25 +160,25 @@ th {
   text-decoration: none;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
   #card-msg .card-container {
     width: 100% !important;
   }
 }
 
-@media (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 479px) {
   #card-msg .card-container {
     width: 100% !important;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
   #card-msg .msg-container {
     width: 100% !important;
   }
 }
 
-@media (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 479px) {
   #card-msg .msg-container {
     width: 100% !important;
   }

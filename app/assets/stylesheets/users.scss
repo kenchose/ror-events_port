@@ -20,13 +20,6 @@ $breakpoint-phone:"(min-width:320px) and (max-width:479px)";
 $break-mobile: 599px;
 $break-tablet: 899px;
 $break-lap: 1199px;
-// body, html {
-//     @media screen and (max-width: $break-mobile) {
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         background-size: cover;
-//     }
-// }
 
 #wrapper {
     min-height:calc(100vh - 65px - 56px);  //calc the min-height of the property where vh - 64px(nav, header, etc elements), and footer element(58px). Sets so that if the content is smaller than the min. height, min height will be applied, otherwise min-height will not be applied
@@ -87,27 +80,16 @@ $break-lap: 1199px;
 .list {
     list-style: none;
 }
-// .ui.large.form.error.segmant {
-//     @media only screen and (max-width: $break-mobile) {
-//         margin-top: 55%;
-//     }
-// }
 
-// .ui.checkbox label {
-//     font-family: 'Arimo', sans-serif;
-// }
-
-// .ui.red.cancel.button a{
-//     font-size: 1rem;
-//     font-weight: 900;
-//     text-decoration: none;
-//     color:white;
-//     &:hover {
-//         text-decoration: none;
-//         color: white;
-//     }
-// }
-
-// .ui.container.edit {
-//     padding-top:3em;
-// }
+#edit-user {
+    .edit-form {
+        padding:120px 2rem 100px;
+        label {
+            margin-top:2.5rem;
+        }
+    }
+    .cancel-edit-btn {
+        color:#fff;
+        font-size:1rem;
+    }
+}

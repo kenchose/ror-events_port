@@ -1,22 +1,23 @@
+<%= stylesheet_link_tag "users", media:"all"%>
 <% if flash[:errors] %>
     <div class="ui error message">
         <h3>There are some errors with your submission</h3>
         <i class="close icon"></i>
         <% flash[:errors].each do |e| %>
-            <ul class="list">
-                <li><%= e %></li>
+            <ul>
+                <li class="list"><%= e %></li>
             </ul>
         <% end %>
     </div>
 <% end %>
 
-<div class="user-wrapper">
-    <div class="ui container edit">
-        <h2><i class="address book  icon"></i>Edit Profile</h2>
-        <form action="/users/<%= @user.id %>" method="post" class="ui large form">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" name="_method" value="patch">
-                <div class="five wide field">
+<div id="wrapper">
+    <div id="edit-user" class="ui container">
+        <div class="edit-form">
+            <form action="/users/<%= @user.id %>" method="post" class="ui form">
+                <h2><i class="address book icon"></i>Edit Profile</h2>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="patch">
                     <div class="required field">
                         <label for="first_name">First Name:</label>
                         <input type="text" name="user[first_name]" value="<%= @user.first_name %>">
@@ -29,72 +30,74 @@
                         <label for="email">Email:</label>
                         <input type="email" name="user[email]" value="<%= @user.email %>">    
                     </div>
-                </div>
-                <div class="two fields">
-                    <div class="required field four wide field">
-                        <label for="location">City:</label>
-                        <input type="text" name="user[city]" value="<%= @user.city %>">            
+                    <div class="field location-field">
+                        <div class="two fields location-field">
+                            <div class="required eight wide field location-field">
+                                <label for="location">City:</label>
+                                <input type="text" name="user[city]" value="<%= @user.city %>">            
+                            </div>
+                            <div class="required four wide field locatin-field">
+                                <label>State</label>
+                                <select class="ui fluid dropdown" name="user[state]" id="state">
+                                    <option value="<%= @user.state %>"><%= @user.state %></option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="required field two wide field">
-                        <label>State</label>
-                        <select class="ui fluid dropdown" name="user[state]" id="state">
-                            <option value="<%= @user.state %>"><%= @user.state %></option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                    </div>
-                </div>
-            <button type="submit" class="ui green button">Edit Profile</button>
-            <button type='button' class="ui red cancel button"><a href="/events">Cancel</a></button>
-        </form>
+                <button type="submit" class="ui green button">Update Profile</button>
+                <button type='button' class="ui red button"><a href="/events" class="cancel-edit-btn">Cancel</a></button>
+            </form>
+        </div>
     </div>
 </div>

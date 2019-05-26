@@ -20,7 +20,7 @@
             <% if @event.users.any? %>
                 <table class="ui fixed table">
                     <thead>
-                        <tr   id="tr-name-location">
+                        <tr id="tr-name-location">
                             <th>Name</th>
                             <th>Location</th>
                         </tr>
@@ -70,7 +70,8 @@
                     <% if @message.exists? %>
                         <% @message.each do |m| %>
                             <a class="avatar">
-                                <img src="https://source.unsplash.com/collection/190727" alt="avatar">
+                                <img src="https://source.unsplash.com/80x80/?people" alt="avatar">
+                                <!-- <img src="https://source.unsplash.com/collection/190727" alt="avatar"> -->
                             </a>
                             <div class="content">
                                 <%= m.user.first_name %> <%= m.user.last_name%>

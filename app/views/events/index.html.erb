@@ -83,7 +83,7 @@
                                     <form action="/joins/<%= event.id %>" method="post">
                                         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                                         <input type="hidden" name="_method" value="delete">
-                                        <button class="negative ui toggle button" type="submit">Cancel Event</button>
+                                        <button class="negative ui toggle button" type="submit">Cancel</button>
                                     </form>
                                 </td>
 
@@ -138,8 +138,8 @@
                                 </div>
                             </td>
                             <% if current_user == event.user and current_user.joining_event.ids.include? (event.id) %>
-                            <td class="ui animated-td">
-                                <button class="ui primary button action-btn">
+                            <td class="ui animated-td ">
+                                <button class="ui primary button action-btn action-btn-edit">
                                     <a class="edit-button" href="events/<%= event.id %>/edit">Edit</a>
                                 </button>
                                 <form action="/events/<%= event.id %>" method="post" class="action-btn">
@@ -162,7 +162,7 @@
                                 <form action="/joins/<%= event.id %>" method="post">
                                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                                     <input type="hidden" name="_method" value="delete">
-                                    <button class="negative ui toggle button" type="submit">Cancel Event</button>
+                                    <button class="negative ui toggle button" type="submit">Cancel</button>
                                 </form>
                             </td>
 
